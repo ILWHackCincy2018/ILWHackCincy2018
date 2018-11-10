@@ -14,6 +14,8 @@ import {FirebaseConfig} from '../environments/firebase.config';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {AgmCoreModule} from '@agm/core';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,10 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAiSO6OQGfj874yQA08Cc8fC5vls3IZDXg'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
