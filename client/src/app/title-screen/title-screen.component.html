@@ -1,39 +1,51 @@
 
-    <div class="row">
-      <div class="col-xs-12 col-md-6 offset-md-3">
-        <h1 class="text-center">
-          <img class="img-fluid" src="logo goes here" alt="Meetup Logo"/>
-          Meetup
-        </h1>
+<div class="row">
+  <div class="col-xs-12 col-md-6 offset-md-3">
+    <h1 class="text-center">
+      <img class="img-fluid" src="logo goes here" alt="Meetup Logo"/>
+      
+      Meetup
+    </h1>
 
-        <h2 class="text-center">
-          Where Roadkill Meats Meals
-        <h2>
+    <h2 class="text-center">
+      Where Roadkill Meats Meals
+    </h2>
 
-        <p>
-          <div>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#newRaid" aria-expanded="false" aria-controls="collapseExample">
-              Start New Raid
-            </button>
-          </div>
+    <p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-target
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </div>
+</div>
 
-          <div class="collapse" id="newRaid">
-            <div class="card card-body">
-              New raid UI goes here.
-            </div>
-          </div>
-        </p>
+    <div>
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#newRaid" aria-expanded="false" aria-controls="newRaid">
+          Start New Raid
+        </button>
+      </p>
 
-        <p>
-          <div>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#activeRaids" aria-expanded="false" aria-controls="collapseExample">
-              Join A Raid
-            </button>
-          </div>
+      <div class="collapse" id="newRaid">
+        <div class="card card-body">
+          Add New 
+        </div> <!-- END .card .card-body -->
+      </div> <!-- END .collapse -->
+    <div>
 
-          <div class="collapse" id="#activeRaids">
-            <div class="card card-body">
-              <div class="accordion" id="accordionExample">
+    <div>
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#activeRaids" aria-expanded="false" aria-controls="activeRaids">
+          Join A Raid
+        </button>
+      </p>
+
+      <div class="collapse" id="activeRaids">
+        <div class="card card-body">
+          <div class="accordion" id="activeRaidsList">
                 <div class="card">
                   <div class="card-header" id="headingOne">
                     <h5>
@@ -43,7 +55,7 @@
                     </h5>
                   </div>
 
-                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#activeRaidsList">
                     <div class="card-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                     </div>
@@ -57,7 +69,7 @@
                       </button>
                     </h5>
                   </div>
-                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#activeRaidsList">
                     <div class="card-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                     </div>
@@ -71,15 +83,15 @@
                       </button>
                     </h5>
                   </div>
-                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#activeRaidsList">
                     <div class="card-body">
                       Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </p>
-      </div>
+          </div> <!-- END #accordionExample -->
+        </div> <!-- END card card-body -->
+      </div> <!-- END #activeRaids -->
     </div>
+  </div> <!-- END .col-xs-12 .col-md-6 .offset-md-3 -->
+</div> <!-- END .row -->
