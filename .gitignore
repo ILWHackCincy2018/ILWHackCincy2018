@@ -40,6 +40,7 @@ testem.log
 Thumbs.db
 
 client/node_modules/
+client/dist/
 
 server/src/main/resources/static/
 server/src/main/resources/templates/
