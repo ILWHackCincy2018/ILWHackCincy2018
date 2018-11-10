@@ -1,11 +1,55 @@
-MEATup Name
-
-            Required Ingredients
-
-            Style of Dish
-
-            Ingredient Acquisition Start Time
-
-            MEATup Time
-
-            MEATup Location
+<form>
+  <div class="form-group">
+    <label for="MEATupName">MEATup Name</label>
+    <input type="text" class="form-control" id="MEATupName" placeholder="Enter a name for your MEATup">
+  </div>
+  <div class="form-group">
+    <label for="MEATerCount">Number of MEATers</label>
+    <select class="form-control" id="MEATerCount"aria-describedby="MEATerCountHelpBlock">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <small id="MEATerCountHelpBlock" class="form-text text-muted">
+  		How many MEATers you want to participate
+		</small>
+  </div>
+  <div class="form-group">
+    <label for="PrepStyle">Preparation Style</label>
+    <input type="text" class="form-control" id="PrepStyle" placeholder="Specify the style of dish">
+  </div>
+  <div class="form-group">
+    <label for="Ingredients">Required Ingredients</label>
+    <div class="input-group">
+	    <input type="text" id="Ingredients" class="form-control" placeholder="Add Ingredient" aria-describedby="IngredientHelpBlock">
+	    <div class="input-group-append">
+	      <button class="btn btn-secondary" type="button" id="button-AddIngredient">+</button>
+	    </div>
+	  </div>
+    <small id="IngredientHelpBlock" class="form-text text-muted">
+  		Add all of the ingredients that you want to be required for the dish.
+		</small>
+  </div>
+  <div class="form-group">
+    <label for="StartTime">Acquisition Start Time</label>
+    <input type="date" class="form-control" id="StartTime" aria-describedby="StartTimeHelpBlock">
+    <small id="StartTimeHelpBlock" class="form-text text-muted">
+  		Set when you want MEATers to start collecting their ingredients
+		</small>
+  </div>
+  <div class="form-group">
+    <label for="MEATupTime">MEATup Time</label>
+    <input type="date" class="form-control" id="MEATupTime" aria-describedby="MEATupTimeHelpBlock">
+    <small id="MEATupTimeHelpBlock" class="form-text text-muted">
+  		Set when you want the MEATup to happen
+		</small>
+  </div>
+  <div class="form-group">
+    <label for="MEATupLocation">MEATup Location</label>
+    <input type="text" class="form-control" id="MEATupLocation" placeholder="Set the location to meet at">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3095.850003633306!2d-84.51781968514916!3d39.109884979538386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b3fd94c8f02b%3A0x3caee5bfc65866b3!2sUnion+Hall!5e0!3m2!1sen!2sus!4v1541886963670" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+  <button type="submit" class="btn brn-block btn-primary">Create MEATup</button>
+</form>
