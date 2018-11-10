@@ -10,6 +10,7 @@
 
 # IDEs and editors
 /.idea
+*.iml
 .project
 .classpath
 .c9/
@@ -40,3 +41,6 @@ Thumbs.db
 
 client/node_modules/
 client/dist/
+
+server/src/main/resources/static/
+server/src/main/resources/templates/
