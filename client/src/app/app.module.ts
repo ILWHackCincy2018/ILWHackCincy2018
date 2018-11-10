@@ -1,14 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { TitleScreenComponent } from './title-screen/title-screen.component';
-import { CreateRaidComponent } from './create-raid/create-raid.component';
-import { RaidListComponent } from './raid-list/raid-list.component';
-import { RaidDescriptionComponent } from './raid-description/raid-description.component';
-import { RoadKillLocatorComponent } from './road-kill-locator/road-kill-locator.component';
-import { IngredientsListComponent } from './ingredients-list/ingredients-list.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {TitleScreenComponent} from './title-screen/title-screen.component';
+import {CreateRaidComponent} from './create-raid/create-raid.component';
+import {RaidListComponent} from './raid-list/raid-list.component';
+import {RaidDescriptionComponent} from './raid-description/raid-description.component';
+import {RoadKillLocatorComponent} from './road-kill-locator/road-kill-locator.component';
+import {IngredientsListComponent} from './ingredients-list/ingredients-list.component';
+import {AngularFireModule} from 'angularfire2';
+import {FirebaseConfig} from '../environments/firebase.config';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
 
 @NgModule({
   declarations: [
@@ -22,9 +27,14 @@ import { IngredientsListComponent } from './ingredients-list/ingredients-list.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(FirebaseConfig.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

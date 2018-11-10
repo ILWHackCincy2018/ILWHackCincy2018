@@ -1,3 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-title-screen></app-title-screen>
+
+<ul>
+    <li class="text" style="display:unset" *ngFor="let item of items | async">
+        <p>
+            {{item.name}}
+        </p>
+    </li>
+</ul>
 <!--<router-outlet></router-outlet>-->
