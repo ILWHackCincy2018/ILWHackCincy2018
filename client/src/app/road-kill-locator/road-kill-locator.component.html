@@ -1,13 +1,22 @@
-<agm-map *ngIf="roadKills !== []" [latitude]="mapCenter.latitude" [longitude]="mapCenter.longitude">
+<agm-map *ngIf="roadKills !== []" [latitude]="mapCenter.latitude" [longitude]="mapCenter.longitude" [zoom]="11">
   <agm-marker *ngFor="let roadKill of roadKills"
-              [label]="roadKill.type[0]"
-              [latitude]="roadKill.latitude"
-              [longitude]="roadKill.longitude">
+              [label]="roadKill.species[0]"
+              [latitude]="roadKill.geocoord._lat"
+              [longitude]="roadKill.geocoord._long">
     <agm-info-window>
-      {{roadKill.type}}
+      <p>{{roadKill.species}}</p>
+      <p>{{getDistanceFromUser(roadKill)}} Miles</p>
+      <p>{{getDaysOld('11-05-2018')}} Days Old</p>
     </agm-info-window>
   </agm-marker>
 </agm-map>
+<div>
+  <form>
+    <input type="text" #address/>
+    <button (click)="setLocation(address.value)">Set Location</button>
+  </form>
+</div>
+
 <button class="btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#RoadkillMapFilter" aria-expanded="false" aria-controls="RoadkillMapFilter">
   Filter Roadkill
 </button>

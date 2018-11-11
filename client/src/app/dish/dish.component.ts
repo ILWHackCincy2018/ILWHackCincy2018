@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Import} from '@angular/compiler-cli/src/ngtsc/host';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-dish',
@@ -6,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dish.component.css']
 })
 export class DishComponent implements OnInit {
+  @Input() roadKillFromDb: Observable<any[]>;
 
   constructor() { }
 

@@ -17,10 +17,11 @@ export class AppComponent {
   constructor(public afAuth: AngularFireAuth, db: AngularFirestore) {
     // this.afAuth.auth.signInAnonymously();
     // this.user = this.afAuth.authState;
-    this.items = db.collection('items').valueChanges();
+    this.items = db.collection('RoadKill').valueChanges();
   }
 
   logout() {
     this.afAuth.auth.signOut();
   }
 }
+
