@@ -16,10 +16,10 @@ export class TitleScreenComponent implements OnInit {
  
   private randomTitleText() {
     const randomTitleTexts = [
-      "Where Roadkill Meats Meals",
-      "It would be a great misteak",
-      "Possum is very slimming",
-      "Pre-tenderized",
+      "Where Roadkill Meats Meals!",
+      "It would be a great missed steak!",
+      "Possum is very slimming!",
+      "Pre-tenderized!",
       "The taste of Ohio!"
     ];
     let i = Math.floor(Math.random() * Math.floor(5));

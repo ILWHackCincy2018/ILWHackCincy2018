@@ -39,5 +39,23 @@ export class RoadKillLocatorComponent implements OnInit {
       this.roadKills[0] = ({species: 'Human', geocoord: {_lat: this.mapCenter.latitude, _long: this.mapCenter.longitude}});
     });
   }
+  public setIcon(species: string){
+    switch (species) {
+      case 'cat':
+        return 'assets/images/icons/cat_1.png';
+      case 'dog':
+        return 'assets/images/icons/dog_1.png';
+      case  'squirrel':
+        return 'assets/images/icons/squirrel_1.png';
+      case  'deer':
+        return 'assets/images/icons/deer_1.png';
+      case 'raccoon':
+        return 'assets/images/icons/raccoon_2.png';
+      case 'Human':
+        return 'assets/images/icons/human_1.png';
+      default:
+        return 'assets/images/icons/meat_2.png';
+    }
+  }
 
 }
