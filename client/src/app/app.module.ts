@@ -52,6 +52,7 @@ const INIT_STATES = [
     name: 'meat-up',
     path: 'meat-up',
     url: '/meat-up',
+    params: {'meat':null},
     component: MeatupPageComponent
   }
 ];

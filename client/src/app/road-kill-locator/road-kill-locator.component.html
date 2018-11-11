@@ -1,3 +1,12 @@
+<form>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Enter Your Starting Address" aria-label="StartAddress" aria-describedby="StartAddress" #address/>
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" id="StartAddress" (click)="setLocation(address.value)">Set Start Point</button>
+    </div>
+  </div>
+</form>
+
 <agm-map *ngIf="roadKills !== []" [latitude]="mapCenter.latitude" [longitude]="mapCenter.longitude" [zoom]="11">
   <agm-marker *ngFor="let roadKill of roadKills"
               [iconUrl]="setIcon(roadKill.species)"

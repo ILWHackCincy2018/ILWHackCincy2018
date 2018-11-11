@@ -20,7 +20,10 @@ export class TitleScreenComponent implements OnInit {
       "It would be a great missed steak!",
       "Possum is very slimming!",
       "Pre-tenderized!",
-      "The taste of Ohio!"
+      "The taste of Ohio!",
+      "Taste the meat no the heat!",
+      "One of us!",
+      "Nothing is Meatered here!"
     ];
     let i = Math.floor(Math.random() * Math.floor(5));
     return randomTitleTexts[i];
