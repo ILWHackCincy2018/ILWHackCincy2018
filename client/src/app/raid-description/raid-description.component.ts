@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-raid-description',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RaidDescriptionComponent implements OnInit {
 
-  constructor() { }
+  raids: Observable<any[]>;
+
+  constructor(db: AngularFirestore) {
+    var raidRef = db.collection('meatups',
+        ref => ref.where('isActive', '==', 'true'));
+  }
 
   ngOnInit() {
   }
