@@ -4,6 +4,7 @@ import {Attendee} from './attendee.model';
 export class MeatUp {
   acquisitionStart:Date;
   attendees: Attendee[];
+  id: string;
   ingredients: string[];
   isActive:boolean;
   location: firebase.firestore.GeoPoint;

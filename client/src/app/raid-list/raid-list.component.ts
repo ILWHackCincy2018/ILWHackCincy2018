@@ -14,8 +14,6 @@ export class RaidListComponent implements OnInit {
   constructor(db: AngularFirestore) {
     this.raids = db.collection('meatups',
       ref => ref.where('isActive', '==', true)).valueChanges();
-
-
   }
 
   ngOnInit() {

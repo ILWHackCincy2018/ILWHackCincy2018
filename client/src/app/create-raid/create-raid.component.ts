@@ -35,10 +35,14 @@ export class CreateRaidComponent implements OnInit {
       'ownerId': this.user.uid,
       'style': this.meatup.style
     }).then(doc => {
+      this.db.collection('meatups').doc(doc.id).update({
+        'id': doc.id
+      });
+
       this.db.collection('users').doc(this.user.uid).collection('meetups').add({
         'name': this.meatup.name,
         'meetupId': doc.id,
-        'isOwner':true
+        'isOwner': true
       });
     });
   }

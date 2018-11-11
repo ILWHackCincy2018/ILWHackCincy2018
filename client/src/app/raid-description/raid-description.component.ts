@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {AngularFirestore} from '@angular/fire/firestore';
 import {MeatUp} from '../models/meatup.model';
 
 @Component({
@@ -8,12 +9,17 @@ import {MeatUp} from '../models/meatup.model';
 })
 export class RaidDescriptionComponent implements OnInit {
 
+  @Input() meatupId: string;
 @Input() meatup: MeatUp;
 
-  constructor() {
+  constructor(private db: AngularFirestore) {
   }
 
   ngOnInit() {
+  }
+
+  joinMeatup() {
+    // this.db.collection('meatups').doc()
   }
 
 }
