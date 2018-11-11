@@ -1,10 +1,14 @@
+import * as firebase from 'firebase/app';
+
 export class MeatUp {
-  name: string;
-  size: number;
-  style: string;
+  acquisitionStart:Date;
   ingredients: string[];
-  start: string;
-  meet: string;
-  lat: number;
-  long: number;
+  isActive:boolean;
+  location: firebase.firestore.GeoPoint;
+  maxChefs: number;
+  maxJudges: number;
+  meatupStart:Date;
+  name: string;
+  ownerId:string;
+  style: string;
 }

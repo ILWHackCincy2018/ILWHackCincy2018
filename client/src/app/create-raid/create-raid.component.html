@@ -11,13 +11,13 @@
       >
   </div>
   <div class="form-group">
-    <label for="size">Number of MEATers</label>
+    <label for="chefs">Number of MEATers</label>
     <select
       class="form-control"
-      id="size"
-      name="size"
+      id="chefs"
+      name="chefs"
       aria-describedby="MEATerCountHelpBlock"
-      [(ngModel)]="meatup.size">
+      [(ngModel)]="meatup.maxChefs">
       <option>1</option>
       <option>2</option>
       <option>3</option>
@@ -27,9 +27,29 @@
     <small
       id="MEATerCountHelpBlock"
       class="form-text text-muted">
-  		How many MEATers you want to participate
+  		How many MEATers you want to participate?
 		</small>
   </div>
+    <div class="form-group">
+        <label for="judges">Number of Judges</label>
+        <select
+                class="form-control"
+                id="judges"
+                name="judges"
+                aria-describedby="MEATerCountHelpBlock"
+                [(ngModel)]="meatup.maxJudges">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <small
+                id="JudgeCountHelpBlock"
+                class="form-text text-muted">
+            How many judges you want to participate?
+        </small>
+    </div>
   <div class="form-group">
     <label for="PrepStyle">Preparation Style</label>
     <input
@@ -63,27 +83,27 @@
 		</small>
   </div>
   <div class="form-group">
-    <label for="start">Acquisition Start Time</label>
+    <label for="acquisitionStart">Acquisition Start Time</label>
     <input
-      type="date"
+      type="datetime-local"
       class="form-control"
-      id="start"
-      name="start"
+      id="acquisitionStart"
+      name="acquisitionStart"
       aria-describedby="StartTimeHelpBlock"
-      [(ngModel)]="meatup.start">
+      [(ngModel)]="meatup.acquisitionStart">
     <small id="StartTimeHelpBlock" class="form-text text-muted">
   		Set when you want MEATers to start collecting their ingredients
 		</small>
   </div>
   <div class="form-group">
-    <label for="meet">MEATup Time</label>
+    <label for="meatupStart">MEATup Time</label>
     <input
-      type="date"
+      type="datetime-local"
       class="form-control"
-      id="meet"
-      name="meet"
+      id="meatupStart"
+      name="meatupStart"
       aria-describedby="MEATupTimeHelpBlock"
-      [(ngModel)]="meatup.meet">
+      [(ngModel)]="meatup.meatupStart">
     <small id="MEATupTimeHelpBlock" class="form-text text-muted">
   		Set when you want the MEATup to happen
 		</small>
