@@ -202,12 +202,13 @@ module RoadkillImport
 
 	class FirebaseExport
 		RemoteUrl = 'https://firestore.googleapis.com/v1beta1/projects'
+		TimeFormat = '%Y-%m-%dT%H:%M:%SZ'
 
 		def pickle(r)
 			{:fields => {
 				:species => {:stringValue => r.animal_type.to_s},
 				:description => {:stringValue => r.description.to_s},
-				:timestamp => {:stringValue => r.timestamp.to_s},
+				:timestamp => {:timestampValue => r.timestamp.strftime(TimeFormat)},
 				:address => {:stringValue => r.address.to_s},
 				:geocoord => {:geoPointValue => {
 					:latitude => r.geocoord.latitude.to_f,
@@ -286,7 +287,7 @@ puts "parsed #{roadkill_records.size} records"
 puts "begin export to application database"
 #exporter = RoadkillImport::FileExport.new("./dump.json",RoadkillImport::ExportValidator.new)
 exporter = RoadkillImport::FirebaseExport.new(
-	"ilwhackcincy2018","RoadKillTest",
+	"ilwhackcincy2018","RoadKill",
 	RoadkillImport::ExportValidator.new
 )
 
