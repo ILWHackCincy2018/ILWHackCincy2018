@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeatupPageComponent implements OnInit {
 
-  constructor() { }
+  items: Observable<any[]>;
+  constructor(db: AngularFirestore)) { 
+    this.items = db.collection('RoadKill').valueChanges();
+  }
 
   ngOnInit() {
   }
