@@ -1,4 +1,12 @@
 <div class="accordion" id="activeRaidsList">
+  <ul>
+    <li class="text" style="display:unset" *ngFor="let item of raids | async">
+      <p>
+        {{item.name}}
+      </p>
+    </li>
+  </ul>
+
   <app-raid-description>
   </app-raid-description>
   <app-raid-description>
