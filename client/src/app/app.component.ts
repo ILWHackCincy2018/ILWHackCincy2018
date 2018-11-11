@@ -13,13 +13,13 @@ import {Observable} from 'rxjs';
 export class AppComponent {
   title = 'my-app';
 
-  user: Observable<firebase.User>;
+  user: firebase.User;
   items: Observable<any[]>;
   constructor(public afAuth: AngularFireAuth,
     db: AngularFirestore,
     public state: StateService) {
-    // this.afAuth.auth.signInAnonymously();
-    // this.user = this.afAuth.authState;
+    this.user = firebase.auth().currentUser;
+
     this.items = db.collection('RoadKill').valueChanges();
   }
 

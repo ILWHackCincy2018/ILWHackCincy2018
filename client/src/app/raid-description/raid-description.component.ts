@@ -26,8 +26,8 @@ export class RaidDescriptionComponent implements OnInit {
       'attendeeCount': this.meatup.attendeeCount + 1
     });
     this.db.collection('meatups').doc(this.meatup.id).collection('attendees').add({
-      'meetupId': this.meatup.id,
-      'meetupName': this.meatup.name,
+      'meatupId': this.meatup.id,
+      'meatupName': this.meatup.name,
       'name': this.user.displayName ? this.user.displayName : '',
       'userId': this.user.uid
     });

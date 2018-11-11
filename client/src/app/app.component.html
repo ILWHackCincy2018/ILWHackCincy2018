@@ -12,15 +12,18 @@
 	        <a uiSref="home" uiSrefActive="active" class="nav-link">Home</a>
 	      </li>
 	      <li class="nav-item dropdown">
-	        <a class="nav-link dropdown-toggle" href="#" id="MyMEATups" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	        <a class="nav-link dropdown-toggle" href="#" id="MyMEATups" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="create()">
 	          My MEATups
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="MyMEATups">
 	          <a uiSref="meat-up" class="dropdown-item" uiSrefActive="active">A Tasty MEATup <span class="badge badge-success">Owner</span></a>
 	          <a class="dropdown-item" href="#">Another MEATup <span class="badge badge-danger">Judge</span></a>
 				<ul>
-					<li class="dropdown-item" *ngFor="let item of raids | async">
-						<a class="dropdown-item" href="#">{{item.name}} <span *ngIf="" class="badge badge-success">Judge</span></a>
+					<li class="dropdown-item" *ngFor="let item of myRaids">
+						<a class="dropdown-item" href="#">{{item.meatupName}}
+              <span *ngIf="item.isOwner" class="badge badge-success">Judge</span>
+              <span *ngIf="!item.isOwner" class="badge badge-info">Chef</span>
+            </a>
 
 					</li>
 				</ul>
