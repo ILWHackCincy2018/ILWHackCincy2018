@@ -1,8 +1,9 @@
 <div class="accordion" id="activeRaidsList">
-  <app-raid-description>
-  </app-raid-description>
-  <app-raid-description>
-  </app-raid-description>
-  <app-raid-description>
-  </app-raid-description>
+  <ul>
+    <li class="text" style="display:unset" *ngFor="let item of raids | async">
+      <p *ngIf="hasSpace(item)">
+          <app-raid-description [meatup]="item"></app-raid-description>
+      </p>
+    </li>
+  </ul>
 </div> <!-- END #accordionExample -->
