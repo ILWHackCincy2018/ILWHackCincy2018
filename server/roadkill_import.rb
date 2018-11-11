@@ -167,6 +167,20 @@ module RoadkillImport
 			@validator = validator
 		end
 
+		def pickle(r)
+			{
+				:id => r.id,
+				:species => r.animal_type,
+				:description => r.description,
+				:timestamp => r.timestamp.to_s,
+				:address => r.address,
+				:geocoord => {
+					:latitude => r.geocoord.latitude,
+					:longitude => r.geocoord.longitude
+				},
+			}
+		end
+
 		def export(records)
 			track_update = 0
 			@validator.sync
@@ -178,11 +192,85 @@ module RoadkillImport
 					next unless @validator.valid?(r)
 					f.puts ',' if add_comma 
 					add_comma = true unless add_comma
-					f.puts JSON.dump(r.export)
+					f.puts JSON.dump(pickle(r))
 				end
 				f.puts ']}'
 			end
 			@validator.set_threshold(track_update)
+		end
+	end
+
+	class FirebaseExport
+		RemoteUrl = 'https://firestore.googleapis.com/v1beta1/projects'
+
+		def pickle(r)
+			{:fields => {
+				:species => {:stringValue => r.animal_type.to_s},
+				:description => {:stringValue => r.description.to_s},
+				:timestamp => {:stringValue => r.timestamp.to_s},
+				:address => {:stringValue => r.address.to_s},
+				:geocoord => {:geoPointValue => {
+					:latitude => r.geocoord.latitude.to_f,
+					:longitude => r.geocoord.longitude.to_f
+				}},
+			}}
+		end
+	
+		def initialize(project, collection, validator)
+			@project = project
+			@collection = collection
+			@finalized_remote = [
+				RemoteUrl, 
+				project, 
+				'databases/(default)/documents', 
+				collection,
+			].join('/')
+			@validator = validator
+		end
+
+		def export(records)
+			track_update = 0
+			@validator.sync
+			records.each do |r|
+				track_update = r.nonce if r.nonce > track_update
+				next unless @validator.valid?(r)
+				self.do_send(r)
+			end
+			@validator.set_threshold(track_update)
+		end
+
+		def do_send(r)
+			uri = URI.parse("#{@finalized_remote}/#{r.id}")
+			begin
+				self.log("export record #{r.id}")
+				request = Net::HTTP::Patch.new(uri)
+				request.content_type = 'application/json'
+				request.body = JSON.dump(pickle(r))
+				response = Net::HTTP.start(
+					uri.hostname,
+					uri.port,
+					:use_ssl => true
+				) {|http| http.request(request) }
+	
+				self.log('check for basic errors')
+				handle_error(uri,"???", nil) if response.nil?
+				handle_error(uri,"???", response.body) if response.code.nil?
+				if (response.code.to_i / 100) != 2
+					handle_error(uri,response.code.to_i, response.body)
+				end
+			rescue Exception => e
+				handle_error(uri,"???",nil,e)
+			end
+		end
+
+		def log(message)
+			$stdout.puts "EXPORT[#{Time.now}]: #{message}"
+		end
+	
+		def handle_error(uri,response_code, error_body = nil, exception = nil)
+			self.log("ERROR! #{uri} => #{response_code}")
+			self.log(error_body) if error_body
+			self.log(exception.to_s) if exception
 		end
 	end
 
@@ -196,6 +284,11 @@ roadkill_records = importer.fetch()
 puts "parsed #{roadkill_records.size} records"
 
 puts "begin export to application database"
-exporter = RoadkillImport::FileExport.new("./dump.json",RoadkillImport::ExportValidator.new)
+#exporter = RoadkillImport::FileExport.new("./dump.json",RoadkillImport::ExportValidator.new)
+exporter = RoadkillImport::FirebaseExport.new(
+	"ilwhackcincy2018","RoadKillTest",
+	RoadkillImport::ExportValidator.new
+)
+
 exporter.export(roadkill_records)
 puts "export complete"
