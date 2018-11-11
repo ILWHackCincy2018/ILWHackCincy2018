@@ -1,53 +1,50 @@
 <div class="card">
-	<div id="Header-MEATupID-12345" class="bg-secondary">
-    <button class="btn btn-block btn-secondary collapsed" type="button" data-toggle="collapse" [attr.data-target]="'#'+meatup.ownerId" aria-expanded="false" [attr.aria-controls]="meatup.ownerId">
-      {{meatup.name}}<br />
-      <span class="badge badge-light">1d 4h 15m <i class="far fa-clock"></i></span>&nbsp;&nbsp;&nbsp;<span class="badge badge-light">{{meatup.attendees.length}}/{{meatup.maxChefs}} <i class="fas fa-user"></i></span>
-    </button>
-  </div>
-
-  <div [attr.id]="meatup.ownerId" class="collapse" aria-labelledby="Header-MEATupID-12345"
-       data-parent="#activeRaidsList">
-    <div class="card-body">
-      <h6>
-        Preparation Style
-      </h6>
-
-      <p>
-        Pizza
-      </p>
-
-      <h6>
-        Required Ingredients
-      </h6>
-
-      <ul>
-        <li>
-          Cashews
-        </li>
-
-        <li>
-          Skim Milk
-        </li>
-
-        <li>
-          Avocados
-        </li>
-      </ul>
-
-      <h6>
-        MEATup Time
-      </h6>
-
-      <p>
-        Sunday, November 11th 2018
-
-      <h6>
-        MEATup Location
-      </h6>
-
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3095.850003633306!2d-84.51781968514916!3d39.109884979538386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b3fd94c8f02b%3A0x3caee5bfc65866b3!2sUnion+Hall!5e0!3m2!1sen!2sus!4v1541886963670" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-      <button type="submit" class="btn brn-block btn-primary">Create MEATup</button>
+    <div id="Header-MEATupID-12345" class="bg-secondary">
+        <button class="btn btn-block btn-secondary collapsed" type="button" data-toggle="collapse"
+                [attr.data-target]="'#'+meatup.ownerId" aria-expanded="false" [attr.aria-controls]="meatup.ownerId">
+            {{meatup.name}}<br/>
+            <span class="badge badge-light">1d 4h 15m <i class="far fa-clock"></i></span>&nbsp;&nbsp;&nbsp;<span
+                class="badge badge-light">{{meatup.attendees.length}}/{{meatup.maxChefs}} <i
+                class="fas fa-user"></i></span>
+        </button>
     </div>
-  </div>
+
+    <div [attr.id]="meatup.ownerId" class="collapse" aria-labelledby="Header-MEATupID-12345"
+         data-parent="#activeRaidsList">
+        <div class="card-body">
+            <h6>
+                Preparation Style
+            </h6>
+
+            <p>
+                {{meatup.style}}
+            </p>
+
+            <h6>
+                Required Ingredients
+            </h6>
+            <ul>
+                <li class="text" *ngFor="let item of meatup.ingredients">
+                    {{item}}
+                </li>
+            </ul>
+
+            <h6>
+                MEATup Time
+            </h6>
+
+            <p>
+                {{meatup.meatupStart}}
+            </p>
+
+            <h6>
+                MEATup Location
+            </h6>
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3095.850003633306!2d-84.51781968514916!3d39.109884979538386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b3fd94c8f02b%3A0x3caee5bfc65866b3!2sUnion+Hall!5e0!3m2!1sen!2sus!4v1541886963670"
+                    width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <br/>
+            <button type="submit" class="btn brn-block btn-primary">Join MEATup</button>
+        </div>
+    </div>
 </div>
