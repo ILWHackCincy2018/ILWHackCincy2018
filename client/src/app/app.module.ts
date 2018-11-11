@@ -16,6 +16,8 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AgmCoreModule} from '@agm/core';
 import {FormsModule} from '@angular/forms';
+import { IngredientDescriptionComponent } from './ingredient-description/ingredient-description.component';
+import { DishComponent } from './dish/dish.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {FormsModule} from '@angular/forms';
     RaidListComponent,
     RaidDescriptionComponent,
     RoadKillLocatorComponent,
-    IngredientsListComponent
+    IngredientsListComponent,
+    IngredientDescriptionComponent,
+    DishComponent
   ],
   imports: [
     BrowserModule,
