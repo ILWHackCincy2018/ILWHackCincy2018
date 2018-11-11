@@ -44,3 +44,5 @@ client/dist/
 
 server/src/main/resources/static/
 server/src/main/resources/templates/
+
+client/package-lock\.json

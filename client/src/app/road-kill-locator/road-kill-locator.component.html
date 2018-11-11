@@ -1,10 +1,10 @@
-<h1>{{ title }}</h1>
-
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-  <agm-marker [latitude]="39.1350589819077" [longitude]="-84.3784142177401"></agm-marker>
-  <agm-marker [latitude]="39.1059684845847" [longitude]="-84.576213344492"></agm-marker>
-  <agm-marker [latitude]="39.1367553720086" [longitude]="-84.5760645109537"></agm-marker>
+<agm-map *ngIf="roadKills !== []" [latitude]="mapCenter.latitude" [longitude]="mapCenter.longitude">
+  <agm-marker *ngFor="let roadKill of roadKills"
+              [label]="roadKill.type[0]"
+              [latitude]="roadKill.latitude"
+              [longitude]="roadKill.longitude">
+    <agm-info-window>
+      {{roadKill.type}}
+    </agm-info-window>
+  </agm-marker>
 </agm-map>
