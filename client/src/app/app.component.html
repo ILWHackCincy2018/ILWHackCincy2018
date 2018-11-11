@@ -5,6 +5,7 @@
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
+
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item">
@@ -17,6 +18,14 @@
 	        <div class="dropdown-menu" aria-labelledby="MyMEATups">
 	          <a uiSref="meat-up" class="dropdown-item" uiSrefActive="active">A Tasty MEATup <span class="badge badge-success">Owner</span></a>
 	          <a class="dropdown-item" href="#">Another MEATup <span class="badge badge-danger">Judge</span></a>
+				<ul>
+					<li class="dropdown-item" *ngFor="let item of raids | async">
+						<a class="dropdown-item" href="#">{{item.name}} <span *ngIf="" class="badge badge-success">Judge</span></a>
+
+					</li>
+				</ul>
+	          <a class="dropdown-item" href="#">A Tasty MEATup <span class="badge badge-success">Judge</span></a>
+	          <a class="dropdown-item" href="#">Another MEATup <span class="badge badge-info">Chef</span></a>
 	          <a class="dropdown-item" href="#">The Final MEATup <span class="badge badge-info">Chef</span></a>
 	        </div>
 	      </li>
@@ -41,11 +50,3 @@
 		<ng-template #showLogin>
 		    <app-login (change)="login()"></app-login>
 		</ng-template>
-
-<div>
-
-</div>
-
-
-<!--<router-outlet></router-outlet>-->
-<!--<app-road-kill-locator></app-road-kill-locator>-->

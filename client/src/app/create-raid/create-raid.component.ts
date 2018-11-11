@@ -38,8 +38,10 @@ export class CreateRaidComponent implements OnInit {
         'id': doc.id
       });
       this.db.collection('meatups').doc(doc.id).collection('attendees').add({
+        'meetupId': doc.id,
+        'meetupName': this.meatup.name,
         'name': this.user.displayName ? this.user.displayName : '',
-        'userId': this.user.uid
+        'userId': this.user.uid,
       });
 
       this.db.collection('users').doc(this.user.uid).collection('meetups').add({
