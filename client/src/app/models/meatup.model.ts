@@ -3,7 +3,7 @@ import {Attendee} from './attendee.model';
 
 export class MeatUp {
   acquisitionStart:Date;
-  attendeesCount: number;
+  attendeeCount: number;
   attendees: Attendee[];
   id: string;
   ingredients: string[];

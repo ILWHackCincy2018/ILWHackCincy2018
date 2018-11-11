@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFirestore} from '@angular/fire/firestore';
+import * as firebase from 'firebase';
 import {MeatUp} from '../models/meatup.model';
 
 @Component({
@@ -10,8 +12,10 @@ import {MeatUp} from '../models/meatup.model';
 export class RaidDescriptionComponent implements OnInit {
 
 @Input() meatup: MeatUp;
+  user: firebase.User;
 
-  constructor(private db: AngularFirestore) {
+  constructor(public afAuth: AngularFireAuth, private db: AngularFirestore) {
+    this.user = firebase.auth().currentUser;
   }
 
   ngOnInit() {
@@ -19,7 +23,11 @@ export class RaidDescriptionComponent implements OnInit {
 
   joinMeatup() {
     this.db.collection('meatups').doc(this.meatup.id).update({
-      'attendees': []
+      'attendeeCount': this.meatup.attendeeCount + 1
+    });
+    this.db.collection('meatups').doc(this.meatup.id).collection('attendees').add({
+      'name': this.user.displayName ? this.user.displayName : '',
+      'userId': this.user.uid
     });
   }
 
