@@ -34,6 +34,7 @@ import { DishJudgementComponent } from './dish-judgement/dish-judgement.componen
 import { DishDescriptionComponent } from './dish-description/dish-description.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { HighScorePageComponent } from './high-score-page/high-score-page.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
     DishJudgementComponent,
     DishDescriptionComponent,
     NavbarComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    HighScorePageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,6 @@
 agm-map {
   width: 100%;
-  height: 450px;
+  height: 200px;
 }
+
+.btn-outline-primary { margin-top:15px; }
