@@ -24,4 +24,3 @@ export class AppComponent {
     this.afAuth.auth.signOut();
   }
 }
-

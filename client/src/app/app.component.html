@@ -37,7 +37,7 @@
 		<p class="text-center">
 			-- PAGE BREAK --
 		</p>
-		
+
 		<app-meatup-page></app-meatup-page>
 
 		<p class="text-center">
@@ -55,8 +55,12 @@
 		</ul>
 	</div>
     <app-dish [roadKillFromDb]="items"></app-dish>
+<div *ngIf="getUser()">
+  <a uiSref="home" uiSrefActive="active">Home</a>
+  <a uiSref="dish" uiSrefActive="active">Dish</a>
+  <a uiSref="meat-up" uiSrefActive="active">Meat Up</a>
 </div>
-<ng-template #showLogin>
-    <p>Please login.</p>
-    <app-login></app-login>
-</ng-template>
+<ui-view></ui-view>
+
+<!--<router-outlet></router-outlet>-->
+<!--<app-road-kill-locator></app-road-kill-locator>-->

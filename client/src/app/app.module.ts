@@ -10,7 +10,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FirebaseUIModule} from 'firebaseui-angular';
 import {FirebaseConfig} from '../environments/firebase.config';
 import {FirebaseUiAuthConfig} from '../environments/FirebaseUiAuth.config';
-import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {CreateRaidComponent} from './create-raid/create-raid.component';
 import {DishDescriptionComponent} from './dish-description/dish-description.component';
@@ -28,6 +27,37 @@ import {RaidListComponent} from './raid-list/raid-list.component';
 import {RoadKillLocatorComponent} from './road-kill-locator/road-kill-locator.component';
 import {MapsService} from './services/maps.service';
 import {TitleScreenComponent} from './title-screen/title-screen.component';
+import {UIRouterModule} from '@uirouter/angular';
+import { HomeComponent } from './home/home.component';
+import { MeatupComponent } from './meatup/meatup.component';
+
+
+const INIT_STATES = [
+  {
+    name: 'login',
+    path: 'login',
+    url: '/login',
+    component: LoginComponent
+  },
+  {
+    name: 'home',
+    path: 'home',
+    url: '/home',
+    component: HomeComponent
+  },
+  {
+    name: 'dish',
+    path: 'dish',
+    url: '/dish',
+    component: DishComponent
+  },
+  {
+    name: 'meat-up',
+    path: 'meat-up',
+    url: '/meat-up',
+    component: MeatupComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -40,25 +70,27 @@ import {TitleScreenComponent} from './title-screen/title-screen.component';
     RaidListComponent,
     RaidDescriptionComponent,
     RoadKillLocatorComponent,
-    IngredientsListComponent,
-    IngredientDescriptionComponent,
-    DishComponent,
     MeatupPageComponent,
     DishJudgementComponent,
     DishDescriptionComponent,
     NavbarComponent,
     ProfilePageComponent,
     HighScorePageComponent,
-    TitleScreenComponent
+    TitleScreenComponent,
+    IngredientsListComponent,
+    IngredientDescriptionComponent,
+    DishComponent,
+    HomeComponent,
+    MeatupComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     AngularFireModule.initializeApp(FirebaseConfig.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     HttpClientModule,
+    UIRouterModule.forRoot({states: INIT_STATES}),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAiSO6OQGfj874yQA08Cc8fC5vls3IZDXg'
     }),
