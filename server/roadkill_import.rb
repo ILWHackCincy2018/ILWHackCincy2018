@@ -60,8 +60,9 @@ module RoadkillImport
 			@timestamp = RoadkillImport.parse_date(ts)
 			@geocoord = GeoCoordinate.new(lat, lon)
 
+			@animal_type = 'mystery'
 			RoadkillImport.animal_types.each do |animal_type|
-				next unless desc =~ /^.*#{animal_type}.*$/i
+				next unless desc =~ /\W#{animal_type}\W/i
 				@animal_type = animal_type
 				break
 			end
@@ -253,7 +254,6 @@ module RoadkillImport
 					:use_ssl => true
 				) {|http| http.request(request) }
 	
-				self.log('check for basic errors')
 				handle_error(uri,"???", nil) if response.nil?
 				handle_error(uri,"???", response.body) if response.code.nil?
 				if (response.code.to_i / 100) != 2
