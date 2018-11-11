@@ -34,28 +34,28 @@ import { MeatupComponent } from './meatup/meatup.component';
 
 const INIT_STATES = [
   {
-    name: 'login',
-    path: 'login',
-    url: '/login',
-    component: LoginComponent
-  },
-  {
     name: 'home',
     path: 'home',
     url: '/home',
-    component: HomeComponent
+    component: TitleScreenComponent
   },
   {
-    name: 'dish',
-    path: 'dish',
-    url: '/dish',
-    component: DishComponent
+    name: 'my-profile',
+    path: 'my-profil',
+    url: '/my-profil',
+    component: ProfilePageComponent
+  },
+  {
+    name: 'high-score',
+    path: 'high-score',
+    url: '/high-score',
+    component: HighScorePageComponent
   },
   {
     name: 'meat-up',
     path: 'meat-up',
     url: '/meat-up',
-    component: MeatupComponent
+    component: MeatupPageComponent
   }
 ];
 
