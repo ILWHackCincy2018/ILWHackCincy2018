@@ -17,13 +17,10 @@ export class CreateRaidComponent implements OnInit {
     this.user = firebase.auth().currentUser;
   }
 
-  ngOnInit() {
-  }
-  public create() {
-    console.log(this.meatup);
-    const meatupRef = this.db.collection('meatups').doc(this.meatup.name);
+  ngOnInit() {}
 
-    meatupRef.set({
+  public create() {
+    this.db.collection('meatups').add({
       'acquisitionStart':this.meatup.acquisitionStart,
       'ingredients': this.meatup.ingredients,
       'isActive': true,
@@ -32,7 +29,7 @@ export class CreateRaidComponent implements OnInit {
       'maxJudges': this.meatup.maxJudges,
       'meatupStart': this.meatup.meatupStart,
       'name': this.meatup.name,
-      'ownerId': this.user.getIdToken(),
+      'ownerId': this.user.uid,
       'style': this.meatup.style
     });
   }
