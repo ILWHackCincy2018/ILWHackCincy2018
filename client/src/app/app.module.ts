@@ -27,7 +27,15 @@ import {RaidDescriptionComponent} from './raid-description/raid-description.comp
 import {RaidListComponent} from './raid-list/raid-list.component';
 import {RoadKillLocatorComponent} from './road-kill-locator/road-kill-locator.component';
 import {MapsService} from './services/maps.service';
+import { MeatupPageComponent } from './meatup-page/meatup-page.component';
+import { DishJudgementComponent } from './dish-judgement/dish-judgement.component';
+import { DishDescriptionComponent } from './dish-description/dish-description.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { HighScorePageComponent } from './high-score-page/high-score-page.component';
 import {TitleScreenComponent} from './title-screen/title-screen.component';
+import {HttpClientModule} from '@angular/common/http';
+import {MapsService} from './services/maps.service';
 
 @NgModule({
   declarations: [
