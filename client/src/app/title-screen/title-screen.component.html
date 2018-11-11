@@ -1,43 +1,41 @@
+<img class="img-fluid mx-auto d-block" src="assets/images/steak-icon.png" alt="Meetup Logo"/>
 
+<h1 class="text-center">
+  MEATup
+</h1>
 
-    <h1 class="text-center">
-      <img class="img-fluid" src="logo goes here" alt="Meetup Logo"/>
-      
-      MEATup
-    </h1>
+<h2 class="text-center">
+  Where Roadkill Meats Meals
+</h2>
 
-    <h2 class="text-center">
-      Where Roadkill Meats Meals
-    </h2>
+<div class="row">
+  <div class="col-sm-10 offset-sm-1">
+    <p>
+      <button class="btn btn-block btn-primary btn-lg" type="button" data-toggle="collapse" data-target="#newRaid" aria-expanded="false" aria-controls="newRaid">
+        Start A New MEATup
+      </button>
+    </p>
 
-    <div class="row">
-      <div class="col-sm-10 offset-sm-1">
-        <p>
-          <button class="btn btn-block btn-primary btn-lg" type="button" data-toggle="collapse" data-target="#newRaid" aria-expanded="false" aria-controls="newRaid">
-            Start A MEATup
-          </button>
-        </p>
+    <div class="collapse" id="newRaid">
+      <div class="card card-body">
+        <app-create-raid>
+        </app-create-raid> 
+      </div> <!-- END .card .card-body -->
+    </div> <!-- END .collapse -->
+  </div> <!-- END .col-xs-10 .offset-xs-1 -->
 
-        <div class="collapse" id="newRaid">
-          <div class="card card-body">
-            <app-create-raid>
-            </app-create-raid> 
-          </div> <!-- END .card .card-body -->
-        </div> <!-- END .collapse -->
-      </div> <!-- END .col-xs-10 .offset-xs-1 -->
+  <div class="col-sm-10 offset-sm-1">
+    <p>
+      <button class="btn btn-block btn-primary btn-lg" type="button" data-toggle="collapse" data-target="#activeRaids" aria-expanded="false" aria-controls="activeRaids">
+        Join A MEATup
+      </button>
+    </p>
 
-      <div class="col-sm-10 offset-sm-1">
-        <p>
-          <button class="btn btn-block btn-primary btn-lg" type="button" data-toggle="collapse" data-target="#activeRaids" aria-expanded="false" aria-controls="activeRaids">
-            Join A MEATup
-          </button>
-        </p>
-
-        <div class="collapse" id="activeRaids">
-          <div class="card card-body">
-            <app-raid-list>
-            </app-raid-list> 
-          </div> <!-- END card card-body -->
-        </div> <!-- END #activeRaids -->
-      </div> <!-- END .col-xs-10 .offset-xs-1 -->
-    </div> <!-- END .row -->
+    <div class="collapse" id="activeRaids">
+      <div class="card card-body">
+        <app-raid-list>
+        </app-raid-list> 
+      </div> <!-- END card card-body -->
+    </div> <!-- END #activeRaids -->
+  </div> <!-- END .col-xs-10 .offset-xs-1 -->
+</div> <!-- END .row -->

@@ -19,9 +19,21 @@ import {LoginComponent} from './login/login.component';
 import {RaidDescriptionComponent} from './raid-description/raid-description.component';
 import {RaidListComponent} from './raid-list/raid-list.component';
 import {RoadKillLocatorComponent} from './road-kill-locator/road-kill-locator.component';
-import {TitleScreenComponent} from './title-screen/title-screen.component';
-import {MapsService} from './services/maps.service';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {IngredientsListComponent} from './ingredients-list/ingredients-list.component';
+import {AngularFireModule} from 'angularfire2';
+import {FirebaseConfig} from '../environments/firebase.config';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {AgmCoreModule} from '@agm/core';
+import {FormsModule} from '@angular/forms';
+import { IngredientDescriptionComponent } from './ingredient-description/ingredient-description.component';
+import { DishComponent } from './dish/dish.component';
+import { MeatupPageComponent } from './meatup-page/meatup-page.component';
+import { DishJudgementComponent } from './dish-judgement/dish-judgement.component';
+import { DishDescriptionComponent } from './dish-description/dish-description.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +46,14 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     RaidListComponent,
     RaidDescriptionComponent,
     RoadKillLocatorComponent,
-    TitleScreenComponent
+    IngredientsListComponent,
+    IngredientDescriptionComponent,
+    DishComponent,
+    MeatupPageComponent,
+    DishJudgementComponent,
+    DishDescriptionComponent,
+    NavbarComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,
