@@ -24,12 +24,12 @@ module RoadkillImport
 		attr_reader :id, :nonce, :description, :timestamp, :address, :geocoord
 		
 		def self.valid_json?(raw_json)
-			raw_json["data"] ? true : false
+			raw_json["data"].is_a?(Array)
 		end
 		
 		def self.parse(raw_json)
 			raw_json["data"].map do |raw|
-				RoadKillRecord .new(
+				RoadKillRecord.new(
 					raw[1], raw[5],
 					raw[10], raw[11],
 					raw[12], raw[13], raw[14]
@@ -62,24 +62,57 @@ module RoadkillImport
 	
 	class JsonExportFetch
 		def initialize(remote)
-			@remote = remote
+			@remote = URI.parse(remote)
 		end
 		
 		def fetch()
+			self.log('start fetch')
 			result = Net::HTTP.get_response(@remote)
-			handleError("???", nil) if result.nil?
-			handleError("???", result.body) if result.code.nil?
+
+			self.log('check for basic errors')
+			handle_error("???", nil) if result.nil?
+			handle_error("???", result.body) if result.code.nil?
 			if (result.code.to_i / 100) != 2
-				handleError(result.code.to_i, result.body)
+				handle_error(result.code.to_i, result.body)
 			end
-			unless RoadKillRecord.valid_json?(result.body)
-				handleError(422, "Response not formatted as expected")
+			
+			self.log('parse response as JSON')
+			raw_json = nil
+			begin
+				raw_json = JSON.parse(result.body)
+			rescue Exception => e
+				handle_error(422, result.body, e)
 			end
-			RoadKillRecord.parse(JSON.parse(result.body))
+
+			self.log('check JSON has valid structure')
+			unless RoadKillRecord.valid_json?(raw_json)
+				handle_error(422, result.body)
+			end
+
+			self.log('parse & return records')
+			ret = []
+			begin
+				ret = RoadKillRecord.parse(raw_json)
+			rescue Exception => e
+				handle_error(422, result.body, e)
+			end
+			ret
+		end
+
+		def log(message)
+			$stdout.puts "FETCH[#{Time.now}]: #{message}"
 		end
 	
-		def handle_error(response_code, error_body)
-			$stdin.puts "#{@remote} => #{response_code}\n#{error_body}"
+		def handle_error(response_code, error_body, exception = nil)
+			self.log("ERROR! #{@remote} => #{response_code}")
+			self.log(exception.to_s) if exception
+			
+			unless error_body.nil?
+				error_file = "./error-#{Time.now}.json"
+				self.log("dumping response body to #{error_file}")
+				File.write(error_file, error_body, :mode => 'w+')
+			end
+
 			raise FetchError.new("#{@remote} => #{response_code}")
 		end
 	end
@@ -115,12 +148,19 @@ module RoadkillImport
 end
 
 #TODO: bind in actual fetcher 
-json_file = File.read("./data-dump.json")
+#json_file = File.read("./data-dump.json")
 #json_file = '{"data": []}'
-raw_json = JSON.parse(json_file)
-puts "!!! check valid json #{RoadkillImport::RoadKillRecord.valid_json?(raw_json)}"
-roadkill_records = RoadkillImport::RoadKillRecord.parse(raw_json)
+#raw_json = JSON.parse(json_file)
+#puts "!!! check valid json #{RoadkillImport::RoadKillRecord.valid_json?(raw_json)}"
 
+$remote_api = "https://data.cincinnati-oh.gov/api/views/wdw5-d4i2/rows.json?accessType=DOWNLOAD"
+
+puts "begin import from remote data source"
+importer = RoadkillImport::JsonExportFetch.new($remote_api)
+roadkill_records = importer.fetch()
+puts "parsed #{roadkill_records.size} records"
+
+puts "begin export to application database"
 exporter = RoadkillImport::FileExport.new("./dump.json",RoadkillImport::ExportValidator.new)
 exporter.export(roadkill_records)
-
+puts "export complete"
