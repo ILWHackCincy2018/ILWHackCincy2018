@@ -1,3 +1,10 @@
-<p>
-  road-kill-locator works!
-</p>
+<agm-map *ngIf="roadKills !== []" [latitude]="mapCenter.latitude" [longitude]="mapCenter.longitude">
+  <agm-marker *ngFor="let roadKill of roadKills"
+              [label]="roadKill.type[0]"
+              [latitude]="roadKill.latitude"
+              [longitude]="roadKill.longitude">
+    <agm-info-window>
+      {{roadKill.type}}
+    </agm-info-window>
+  </agm-marker>
+</agm-map>
