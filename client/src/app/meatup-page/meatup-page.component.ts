@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {AngularFireAuth} from '@angular/fire/auth';
+import {AngularFirestore} from '@angular/fire/firestore';
+import * as firebase from 'firebase/app';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-meatup-page',
@@ -7,9 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeatupPageComponent implements OnInit {
 
-  constructor() { }
-
+   items: Observable<any[]>;
+   constructor(db: AngularFirestore) {
+     this.items = db.collection('RoadKill').valueChanges();
+   }
   ngOnInit() {
   }
-
 }

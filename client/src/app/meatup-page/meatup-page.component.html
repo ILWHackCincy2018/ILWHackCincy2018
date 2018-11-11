@@ -49,20 +49,8 @@
   Possum Pasta
 </p>
 
-<h4>
-  Ingredients
-</h4>
-
-<app-ingredients-list>
-</app-ingredients-list>
-
 <!-- Section only appears during preparation phase -->
-<h4>
-  Protien Locator
-</h4>
-
-<app-road-kill-locator>
-</app-road-kill-locator>
+<app-dish [roadKillFromDb]="items"></app-dish>
 
 <!-- Section only appears during judgement phase and closed phase -->
 <h4>
