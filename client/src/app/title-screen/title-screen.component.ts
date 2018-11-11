@@ -21,8 +21,8 @@ export class TitleScreenComponent implements OnInit {
   }
  
   public randomTitleText() {
-    let i = Math.floor(Math.random() * Math.floor(randomTitleTexts.length));
-    return randomTitleTexts[i];
+    let i = Math.floor(Math.random() * Math.floor(this.randomTitleTexts.length));
+    return this.randomTitleTexts[i];
   }
 
 }

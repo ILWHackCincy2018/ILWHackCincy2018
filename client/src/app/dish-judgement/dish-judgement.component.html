@@ -1,10 +1,35 @@
-<form>
-  <div class="accordion" id="dishList">
-	  <app-dish-description>
-	  </app-dish-description>
-	  <app-dish-description>
-	  </app-dish-description>
-	  <app-dish-description>
-	  </app-dish-description>
-	</div> <!-- END #dishList -->
-</form>
+<div class="accordion" id="dishList">
+  <app-dish-description>
+  </app-dish-description>
+  <app-dish-description>
+  </app-dish-description>
+  <app-dish-description>
+  </app-dish-description>
+</div>
+
+<p style="margin-top:15px;">
+  <button class="btn btn-block btn-primary btn-lg" type="button" data-toggle="collapse" data-target="#newDish" aria-expanded="false" aria-controls="newDish">
+    Add My Dish
+  </button>
+</p>
+
+<div class="collapse" id="newDish">
+  <div class="card card-body">
+    <form>
+      <div class="form-group">
+        <label for="DishName">Dish Name</label>
+        <input type="email" class="form-control" id="DishName" placeholder="Enter the name of your dish">
+      </div>
+      <div class="input-group">
+        <div class="custom-file">
+          <label class="custom-file-label" for="DishImage">Photo of Your Dish</label>
+          <input type="file" class="custom-file-input" id="DishImage" aria-describedby="DishImageAddon">
+          <div class="input-group-append">
+            <span class="input-group-text" id="DishImageAddon">Browse</span>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" style="margin-top:15px;">Add Dish</button>
+    </form>
+  </div>
+</div>
