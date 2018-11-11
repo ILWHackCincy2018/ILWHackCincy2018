@@ -9,13 +9,14 @@
 
 <agm-map *ngIf="roadKills !== []" [latitude]="mapCenter.latitude" [longitude]="mapCenter.longitude" [zoom]="11">
   <agm-marker *ngFor="let roadKill of roadKills"
-              [label]="roadKill.species[0]"
+              [iconUrl]="'assets/images/icons/meat_2.png'"
               [latitude]="roadKill.geocoord._lat"
               [longitude]="roadKill.geocoord._long">
     <agm-info-window>
       <p>{{roadKill.species}}</p>
       <p>{{getDistanceFromUser(roadKill)}} Miles</p>
       <p>{{getDaysOld('11-05-2018')}} Days Old</p>
+      <p><a href="https://www.google.com/maps/dir/?api=1&origin=Cincinnati+OH&destination={{roadKill.geocoord._lat}},{{roadKill.geocoord._long}}&travelmode=walking" target="_blank">Take me to the Meat!</a></p>
     </agm-info-window>
   </agm-marker>
 </agm-map>

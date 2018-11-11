@@ -7,6 +7,7 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {FormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
+import {UIRouterModule} from '@uirouter/angular';
 import {FirebaseUIModule} from 'firebaseui-angular';
 import {FirebaseConfig} from '../environments/firebase.config';
 import {FirebaseUiAuthConfig} from '../environments/FirebaseUiAuth.config';
@@ -27,9 +28,6 @@ import {RaidListComponent} from './raid-list/raid-list.component';
 import {RoadKillLocatorComponent} from './road-kill-locator/road-kill-locator.component';
 import {MapsService} from './services/maps.service';
 import {TitleScreenComponent} from './title-screen/title-screen.component';
-import {UIRouterModule} from '@uirouter/angular';
-import { HomeComponent } from './home/home.component';
-
 
 const INIT_STATES = [
   {
@@ -78,8 +76,7 @@ const INIT_STATES = [
     TitleScreenComponent,
     IngredientsListComponent,
     IngredientDescriptionComponent,
-    DishComponent,
-    HomeComponent
+    DishComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-title-screen',
@@ -6,23 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./title-screen.component.css']
 })
 export class TitleScreenComponent implements OnInit {
+  public subHeading: string = '';
 
-  randomTitleTexts: [
-    "Where Roadkill Meats Meals",
-    "It would be a great misteak",
-    "Possum is very slimming",
-    "Pre-tenderized",
-    "The taste of Ohio!"
-  ];
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    this.subHeading = this.randomTitleText();
   }
  
-  public randomTitleText() {
-    let i = Math.floor(Math.random() * Math.floor(this.randomTitleTexts.length));
-    return this.randomTitleTexts[i];
+  private randomTitleText() {
+    const randomTitleTexts = [
+      "Where Roadkill Meats Meals",
+      "It would be a great misteak",
+      "Possum is very slimming",
+      "Pre-tenderized",
+      "The taste of Ohio!"
+    ];
+    let i = Math.floor(Math.random() * Math.floor(5));
+    return randomTitleTexts[i];
   }
 
 }

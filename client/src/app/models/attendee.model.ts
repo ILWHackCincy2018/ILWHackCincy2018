@@ -1,9 +1,9 @@
 import {Dish} from './dish.model';
-import {Role} from './role.model';
 
 export class Attendee {
   dish: Dish;
+  'meatupId': string;
+  'meatupName': string;
   name: string;
-  role: Role;
   userId: string;
 }
