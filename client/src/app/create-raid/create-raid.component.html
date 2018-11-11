@@ -6,13 +6,13 @@
                 class="form-control"
                 id="name"
                 name="name"
-                placeholder="Enter a name for your MEATup"
+                placeholder="Enter a name for your MEATup."
                 [(ngModel)]="meatup.name"
         >
     </div>
     <div class="form-group">
         <label for="JudgeCount">Number of Judges</label>
-        <select class="form-control" id="JudgeCount" aria-describedby="JudgeCountHelpBlock" [(ngModel)]="meatup.maxJudges">>
+        <select class="form-control" id="JudgeCount" name="JudgeCount" aria-describedby="JudgeCountHelpBlock" [(ngModel)]="meatup.maxJudges">>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -20,12 +20,12 @@
             <option>5</option>
         </select>
         <small id="JudgeCountHelpBlock" class="form-text text-muted">
-            How many judges you want to participate
+            How many judges you want to participate?
         </small>
     </div>
     <div class="form-group">
         <label for="ChefCount">Number of Chefs</label>
-        <select class="form-control" id="ChefCount" aria-describedby="ChefCountHelpBlock" [(ngModel)]="meatup.maxChefs">
+        <select class="form-control" id="ChefCount" name="ChefCount" aria-describedby="ChefCountHelpBlock" [(ngModel)]="meatup.maxChefs">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -33,7 +33,7 @@
             <option>5</option>
         </select>
         <small id="ChefCountHelpBlock" class="form-text text-muted">
-            How many chefs you want to participate
+            How many chefs you want to participate?
         </small>
     </div>
     <div class="form-group">
@@ -78,7 +78,7 @@
                 aria-describedby="StartTimeHelpBlock"
                 [(ngModel)]="meatup.acquisitionStart">
         <small id="StartTimeHelpBlock" class="form-text text-muted">
-            Set when you want MEATers to start collecting their ingredients
+            Set when you want MEATers to start collecting their ingredients.
         </small>
     </div>
     <div class="form-group">
@@ -91,7 +91,7 @@
                 aria-describedby="MEATupTimeHelpBlock"
                 [(ngModel)]="meatup.meatupStart">
         <small id="MEATupTimeHelpBlock" class="form-text text-muted">
-            Set when you want the MEATup to happen
+            Set when you want the MEATup to happen.
         </small>
     </div>
     <div class="form-group">
