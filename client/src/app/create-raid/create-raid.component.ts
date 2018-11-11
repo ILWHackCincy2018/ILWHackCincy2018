@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AngularFirestore} from '@angular/fire/firestore';
 import {MeatUp} from './meat-up.model';
-import {AngularFirestore} from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-create-raid',
