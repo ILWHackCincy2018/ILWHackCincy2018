@@ -29,7 +29,6 @@ import {MapsService} from './services/maps.service';
 import {TitleScreenComponent} from './title-screen/title-screen.component';
 import {UIRouterModule} from '@uirouter/angular';
 import { HomeComponent } from './home/home.component';
-import { MeatupComponent } from './meatup/meatup.component';
 
 
 const INIT_STATES = [
@@ -80,8 +79,7 @@ const INIT_STATES = [
     IngredientsListComponent,
     IngredientDescriptionComponent,
     DishComponent,
-    HomeComponent,
-    MeatupComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
