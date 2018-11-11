@@ -10,7 +10,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FirebaseUIModule} from 'firebaseui-angular';
 import {FirebaseConfig} from '../environments/firebase.config';
 import {FirebaseUiAuthConfig} from '../environments/FirebaseUiAuth.config';
-import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {CreateRaidComponent} from './create-raid/create-raid.component';
 import {DishDescriptionComponent} from './dish-description/dish-description.component';
@@ -36,6 +35,34 @@ import { HighScorePageComponent } from './high-score-page/high-score-page.compon
 import {TitleScreenComponent} from './title-screen/title-screen.component';
 import {HttpClientModule} from '@angular/common/http';
 import {MapsService} from './services/maps.service';
+import {UIRouterModule} from '@uirouter/angular'
+
+const INIT_STATES = [
+  {
+    name: 'home',
+    path: 'home',
+    url: '/home',
+    component: TitleScreenComponent
+  },
+  {
+    name: 'my-profile',
+    path: 'my-profil',
+    url: '/my-profil',
+    component: ProfilePageComponent
+  },
+  {
+    name: 'high-score',
+    path: 'high-score',
+    url: '/high-score',
+    component: HighScorePageComponent
+  },
+  {
+    name: 'meat-up',
+    path: 'meat-up',
+    url: '/meat-up',
+    component: MeatupPageComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -48,25 +75,25 @@ import {MapsService} from './services/maps.service';
     RaidListComponent,
     RaidDescriptionComponent,
     RoadKillLocatorComponent,
-    IngredientsListComponent,
-    IngredientDescriptionComponent,
-    DishComponent,
     MeatupPageComponent,
     DishJudgementComponent,
     DishDescriptionComponent,
     NavbarComponent,
     ProfilePageComponent,
     HighScorePageComponent,
-    TitleScreenComponent
+    TitleScreenComponent,
+    IngredientsListComponent,
+    IngredientDescriptionComponent,
+    DishComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     AngularFireModule.initializeApp(FirebaseConfig.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     HttpClientModule,
+    UIRouterModule.forRoot({states: INIT_STATES}),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAiSO6OQGfj874yQA08Cc8fC5vls3IZDXg'
     }),

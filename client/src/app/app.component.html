@@ -5,25 +5,27 @@
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
-
 	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 	    <ul class="navbar-nav mr-auto">
 	      <li class="nav-item">
-	        <a class="nav-link" href="#">Home</a>
+	        <a uiSref="home" uiSrefActive="active" class="nav-link">Home</a>
 	      </li>
 	      <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" href="#" id="MyMEATups" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	          My MEATups
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="MyMEATups">
-	          <a class="dropdown-item" href="#">A Tasty MEATup <span class="badge badge-success">Owner</span></a>
+	          <a uiSref="meat-up" class="dropdown-item" uiSrefActive="active">A Tasty MEATup <span class="badge badge-success">Owner</span></a>
 	          <a class="dropdown-item" href="#">Another MEATup <span class="badge badge-danger">Judge</span></a>
 	          <a class="dropdown-item" href="#">The Final MEATup <span class="badge badge-info">Chef</span></a>
 	        </div>
 	      </li>
 	      <li class="nav-item">
-	        <a class="nav-link" href="#">My Profile</a>
+	        <a uiSref="my-profile" class="nav-link" uiSrefActive="active">My Profile</a>
 	      </li>
+				<li class="nav-item">
+					<a uiSref="high-score" class="nav-link" uiSrefActive="active">High Score</a>
+				</li>
 	      <li class="nav-item">
 	        <a class="nav-link" href="#" (click)="logout()">Log Out</a>
 	      </li>
@@ -32,31 +34,18 @@
 	</nav>
 
 	<div class="col-sm-12 col-md-8 offset-md-2">
-		<app-title-screen></app-title-screen>
-
-		<p class="text-center">
-			-- PAGE BREAK --
-		</p>
-		
-		<app-meatup-page></app-meatup-page>
-
-		<p class="text-center">
-			-- PAGE BREAK --
-		</p>
-
-		<app-high-score-page></app-high-score-page>
-
-		<ul>
-		    <li class="text" style="display:unset" *ngFor="let item of items | async">
-		        <p>
-		            {{item.name}}
-		        </p>
-		    </li>
-		</ul>
+		<ui-view></ui-view>
 	</div>
-    <app-dish [roadKillFromDb]="items"></app-dish>
+
 </div>
-<ng-template #showLogin>
-    <p>Please login.</p>
-    <app-login></app-login>
-</ng-template>
+		<ng-template #showLogin>
+		    <app-login (change)="login()"></app-login>
+		</ng-template>
+
+<div>
+
+</div>
+
+
+<!--<router-outlet></router-outlet>-->
+<!--<app-road-kill-locator></app-road-kill-locator>-->
