@@ -11,21 +11,17 @@ import {MapsService} from '../services/maps.service';
   styleUrls: ['./create-raid.component.css']
 })
 export class CreateRaidComponent implements OnInit {
-  public meatup: MeatUp = new MeatUp();
   public meatUpLocation = {latitude: 0, longitude: 0};
+  public meatup: MeatUp = new MeatUp();
   user: firebase.User;
 
   constructor(public afAuth: AngularFireAuth, private db: AngularFirestore, private mapsService: MapsService) {
     this.user = firebase.auth().currentUser;
   }
 
-  ngOnInit() {
-    this.setMeatLocation("Union Hall 1311 Vine St Cincinnati, OH 45202");
-  }
-
   public create() {
     this.db.collection('meatups').add({
-      'acquisitionStart':this.meatup.acquisitionStart,
+      'acquisitionStart': this.meatup.acquisitionStart,
       'attendees': [{
         'name': this.user.displayName ? this.user.displayName : '',
         'userId': this.user.uid
@@ -38,10 +34,20 @@ export class CreateRaidComponent implements OnInit {
       'name': this.meatup.name,
       'ownerId': this.user.uid,
       'style': this.meatup.style
+    }).then(doc => {
+      this.db.collection('users').doc(this.user.uid).collection('meetups').add({
+        'name': this.meatup.name,
+        'meetupId': doc.id,
+        'isOwner':true
+      });
     });
   }
 
-  public setMeatLocation(address: string){
+  ngOnInit() {
+    this.setMeatLocation("Union Hall 1311 Vine St Cincinnati, OH 45202");
+  }
+
+  public setMeatLocation(address: string) {
     this.mapsService.setLocation(address).subscribe((response: any) => {
       this.meatUpLocation.latitude = response.results[0].geometry.location.lat;
       this.meatUpLocation.longitude = response.results[0].geometry.location.lng;
