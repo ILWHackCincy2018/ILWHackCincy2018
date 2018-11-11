@@ -1,102 +1,123 @@
 <form #meatUpForm="ngForm">
-  <div class="form-group">
-    <label for="name">MEATup Name</label>
-    <input
-      type="text"
-      class="form-control"
-      id="name"
-      name="name"
-      placeholder="Enter a name for your MEATup"
-      [(ngModel)]="meatup.name"
-      >
-  </div>
-  <div class="form-group">
-    <label for="size">Number of MEATers</label>
-    <select
-      class="form-control"
-      id="size"
-      name="size"
-      aria-describedby="MEATerCountHelpBlock"
-      [(ngModel)]="meatup.size">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-    <small
-      id="MEATerCountHelpBlock"
-      class="form-text text-muted">
-  		How many MEATers you want to participate
-		</small>
-  </div>
-  <div class="form-group">
-    <label for="PrepStyle">Preparation Style</label>
-    <input
-      type="text"
-      class="form-control"
-      id="PrepStyle"
-      name="style"
-      placeholder="Specify the style of dish"
-      [(ngModel)]="meatup.style"
-    >
-  </div>
-  <div class="form-group">
-    <label for="Ingredients">Required Ingredients</label>
-    <div class="input-group">
-	    <input
-        type="text"
-        id="Ingredients"
-        class="form-control"
-        name="ingredients"
-        placeholder="Add Ingredient"
-        aria-describedby="IngredientHelpBlock"
-        [(ngModel)]="meatup.ingredients">
-	    <div class="input-group-append">
-	      <button class="btn btn-secondary" type="button" id="button-AddIngredient">+</button>
-	    </div>
-	  </div>
-    <small
-      id="IngredientHelpBlock"
-      class="form-text text-muted">
-  		Add all of the ingredients that you want to be required for the dish.
-		</small>
-  </div>
-  <div class="form-group">
-    <label for="start">Acquisition Start Time</label>
-    <input
-      type="date"
-      class="form-control"
-      id="start"
-      name="start"
-      aria-describedby="StartTimeHelpBlock"
-      [(ngModel)]="meatup.start">
-    <small id="StartTimeHelpBlock" class="form-text text-muted">
-  		Set when you want MEATers to start collecting their ingredients
-		</small>
-  </div>
-  <div class="form-group">
-    <label for="meet">MEATup Time</label>
-    <input
-      type="date"
-      class="form-control"
-      id="meet"
-      name="meet"
-      aria-describedby="MEATupTimeHelpBlock"
-      [(ngModel)]="meatup.meet">
-    <small id="MEATupTimeHelpBlock" class="form-text text-muted">
-  		Set when you want the MEATup to happen
-		</small>
-  </div>
-  <div class="form-group">
-    <label for="MEATupLocation">MEATup Location</label>
-    <input type="text" class="form-control" id="MEATupLocation" placeholder="Set the location to meet at">
-    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3095.850003633306!2d-84.51781968514916!3d39.109884979538386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b3fd94c8f02b%3A0x3caee5bfc65866b3!2sUnion+Hall!5e0!3m2!1sen!2sus!4v1541886963670" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>-->
-    <app-road-kill-locator></app-road-kill-locator>
-  </div>
-  <button
-    type="submit"
-    class="btn brn-block btn-primary"
-    (click)="create()"
-  >Create MEATup</button>
+    <div class="form-group">
+        <label for="name">MEATup Name</label>
+        <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                placeholder="Enter a name for your MEATup"
+                [(ngModel)]="meatup.name"
+        >
+    </div>
+    <div class="form-group">
+        <label for="chefs">Number of MEATers</label>
+        <select
+                class="form-control"
+                id="chefs"
+                name="chefs"
+                aria-describedby="MEATerCountHelpBlock"
+                [(ngModel)]="meatup.maxChefs">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <small
+                id="MEATerCountHelpBlock"
+                class="form-text text-muted">
+            How many MEATers you want to participate?
+        </small>
+    </div>
+    <div class="form-group">
+        <label for="judges">Number of Judges</label>
+        <select
+                class="form-control"
+                id="judges"
+                name="judges"
+                aria-describedby="MEATerCountHelpBlock"
+                [(ngModel)]="meatup.maxJudges">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <small
+                id="JudgeCountHelpBlock"
+                class="form-text text-muted">
+            How many judges you want to participate?
+        </small>
+    </div>
+    <div class="form-group">
+        <label for="PrepStyle">Preparation Style</label>
+        <input
+                type="text"
+                class="form-control"
+                id="PrepStyle"
+                name="style"
+                placeholder="Specify the style of dish"
+                [(ngModel)]="meatup.style"
+        >
+    </div>
+    <div class="form-group">
+        <label for="Ingredients">Required Ingredients</label>
+        <div class="input-group">
+            <input
+                    type="text"
+                    id="Ingredients"
+                    class="form-control"
+                    name="ingredients"
+                    placeholder="Add Ingredient"
+                    aria-describedby="IngredientHelpBlock"
+                    [(ngModel)]="meatup.ingredients">
+            <div class="input-group-append">
+                <button class="btn btn-secondary" type="button" id="button-AddIngredient">+</button>
+            </div>
+        </div>
+        <small
+                id="IngredientHelpBlock"
+                class="form-text text-muted">
+            Add all of the ingredients that you want to be required for the dish.
+        </small>
+    </div>
+    <div class="form-group">
+        <label for="acquisitionStart">Acquisition Start Time</label>
+        <input
+                type="datetime-local"
+                class="form-control"
+                id="acquisitionStart"
+                name="acquisitionStart"
+                aria-describedby="StartTimeHelpBlock"
+                [(ngModel)]="meatup.acquisitionStart">
+        <small id="StartTimeHelpBlock" class="form-text text-muted">
+            Set when you want MEATers to start collecting their ingredients
+        </small>
+    </div>
+    <div class="form-group">
+        <label for="meatupStart">MEATup Time</label>
+        <input
+                type="datetime-local"
+                class="form-control"
+                id="meatupStart"
+                name="meatupStart"
+                aria-describedby="MEATupTimeHelpBlock"
+                [(ngModel)]="meatup.meatupStart">
+        <small id="MEATupTimeHelpBlock" class="form-text text-muted">
+            Set when you want the MEATup to happen
+        </small>
+    </div>
+    <div class="form-group">
+        <label for="MEATupLocation">MEATup Location</label>
+        <input type="text" class="form-control" id="MEATupLocation" placeholder="Set the location to meet at">
+        <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3095.850003633306!2d-84.51781968514916!3d39.109884979538386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841b3fd94c8f02b%3A0x3caee5bfc65866b3!2sUnion+Hall!5e0!3m2!1sen!2sus!4v1541886963670" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+        <app-road-kill-locator></app-road-kill-locator>
+    </div>
+    <button
+            type="submit"
+            class="btn brn-block btn-primary"
+            (click)="create()">
+    Create MEATup
+    </button>
 </form>
