@@ -1,7 +1,7 @@
 <div class="accordion" id="activeRaidsList">
   <ul>
     <li class="text" style="display:unset" *ngFor="let item of raids | async">
-      <p>
+      <p *ngIf="hasSpace(item)">
           <app-raid-description [meatup]="item"></app-raid-description>
       </p>
     </li>

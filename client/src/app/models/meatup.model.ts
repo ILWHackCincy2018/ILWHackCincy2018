@@ -10,7 +10,6 @@ export class MeatUp {
   isActive:boolean;
   location: firebase.firestore.GeoPoint;
   maxChefs: number;
-  maxJudges: number;
   meatupStart:Date;
   name: string;
   ownerId:string;

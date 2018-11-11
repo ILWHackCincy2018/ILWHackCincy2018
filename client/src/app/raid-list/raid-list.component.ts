@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
+import {MeatUp} from '../models/meatup.model';
 
 @Component({
   selector: 'app-raid-list',
@@ -17,6 +18,10 @@ export class RaidListComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  hasSpace(item: MeatUp) {
+    return item.attendeeCount < item.maxChefs;
   }
 
 }
