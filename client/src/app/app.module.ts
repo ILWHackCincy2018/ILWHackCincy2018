@@ -19,16 +19,6 @@ import {LoginComponent} from './login/login.component';
 import {RaidDescriptionComponent} from './raid-description/raid-description.component';
 import {RaidListComponent} from './raid-list/raid-list.component';
 import {RoadKillLocatorComponent} from './road-kill-locator/road-kill-locator.component';
-import {IngredientsListComponent} from './ingredients-list/ingredients-list.component';
-import {AngularFireModule} from 'angularfire2';
-import {FirebaseConfig} from '../environments/firebase.config';
-import {AngularFirestoreModule} from 'angularfire2/firestore';
-import {AngularFireAuthModule} from 'angularfire2/auth';
-import {AngularFireDatabaseModule} from 'angularfire2/database';
-import {AgmCoreModule} from '@agm/core';
-import {FormsModule} from '@angular/forms';
-import { IngredientDescriptionComponent } from './ingredient-description/ingredient-description.component';
-import { DishComponent } from './dish/dish.component';
 import { MeatupPageComponent } from './meatup-page/meatup-page.component';
 import { DishJudgementComponent } from './dish-judgement/dish-judgement.component';
 import { DishDescriptionComponent } from './dish-description/dish-description.component';
@@ -55,7 +45,8 @@ import { HighScorePageComponent } from './high-score-page/high-score-page.compon
     DishDescriptionComponent,
     NavbarComponent,
     ProfilePageComponent,
-    HighScorePageComponent
+    HighScorePageComponent,
+    TitleScreenComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +55,6 @@ import { HighScorePageComponent } from './high-score-page/high-score-page.compon
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    FormsModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAiSO6OQGfj874yQA08Cc8fC5vls3IZDXg'
