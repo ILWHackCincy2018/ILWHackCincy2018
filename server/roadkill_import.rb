@@ -14,6 +14,18 @@ module RoadkillImport
 			@latitude, @longitude = lat, lon
 		end
 	end
+
+	def self.animal_types()
+		return @animal_types if @animal_types
+		$stdout.puts "reload animal types"
+		@animal_types = []
+		File.open('./animal_types.list') do |f|
+		f.each do |line|
+			next if line.strip.empty?
+			@animal_types << line.strip
+		end end
+		@animal_types
+	end
 	
 	def self.parse_date(raw)
 		#2016-12-05T00:00:00Z
@@ -24,7 +36,9 @@ module RoadkillImport
 	end
 
 	class RoadKillRecord 
-		attr_reader :id, :nonce, :description, :timestamp, :address, :geocoord
+		attr_reader :id, :nonce
+		attr_reader :description, :timestamp, :animal_type
+		attr_reader :address, :geocoord
 		
 		def self.valid_json?(raw_json)
 			raw_json["data"].is_a?(Array)
@@ -45,12 +59,18 @@ module RoadkillImport
 			@nonce = nonce.to_i
 			@timestamp = RoadkillImport.parse_date(ts)
 			@geocoord = GeoCoordinate.new(lat, lon)
+
+			RoadkillImport.animal_types.each do |animal_type|
+				next unless desc =~ /^.*#{animal_type}.*$/i
+				@animal_type = animal_type
+				break
+			end
 		end
 
 		def export()
 			{
 				:id => @id,
-				:nonce => @nonce,
+				:species => @animal_type,
 				:description => @description,
 				:timestamp => @timestamp.to_s,
 				:address => @address,

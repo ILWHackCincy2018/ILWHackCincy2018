@@ -1,3 +1,71 @@
 {"data":[
-{"id":"76E3BE41-7909-476F-B7A2-84D5F0624741","nonce":1541860656,"description":"\"DEAD DEER AT THE CURB NB ON WINTON\"","timestamp":"2018-11-08 08:18:00 +0000","address":"\"5250 WINTON RD - GJ1400040457 \"","geocoord":{"latitude":"39.1870362735622","longitude":"-84.522251013965"}}
+{"id":"76652915-E273-4F7F-BD0F-18ADEFAACA91","species":null,"description":"\"Request entered through the Web. Refer to Intake Questions for further description.\"","timestamp":"2018-11-05 20:43:00 +0000","address":"\"2529 OBSERVATORY AV, CINC - GJ2048635120\"","geocoord":{"latitude":"39.1373691351956","longitude":"-84.4489537089005"}}
+,
+{"id":"0CEEBC9A-112C-46FC-8163-AEA5E0F8B5F7","species":"deer","description":"\"DEAD DEER\"","timestamp":"2018-11-05 08:04:00 +0000","address":"\"3800 RIVER RD - GJ0758328158 \"","geocoord":{"latitude":"39.0778624387409","longitude":"-84.6002532799051"}}
+,
+{"id":"C0F3A729-45BB-425E-B2CE-2050442F91D4","species":"dog","description":"\"DEAD DOG AT THE CURB\"","timestamp":"2018-11-05 07:38:00 +0000","address":"\"1511 FRANKLIN AV - GJ1840839172 \"","geocoord":{"latitude":"39.1743703584191","longitude":"-84.4716752359294"}}
+,
+{"id":"B1C84FFD-A91A-413A-989D-8E5610747E7C","species":null,"description":"\"Request entered through the Web. Refer to Intake Questions for further description.\"","timestamp":"2018-11-05 10:43:00 +0000","address":"\"6270 ESTE AV, CINC - GJ1665041080\"","geocoord":{"latitude":"39.1919888747626","longitude":"-84.4913931031393"}}
+,
+{"id":"E69C273A-04F4-4451-9601-E0C09FDD71FB","species":null,"description":"\"Request entered through the Web. Refer to Intake Questions for further description.\"","timestamp":"2018-11-04 08:34:00 +0000","address":"\"1165 OVERLOOK AV, CINC - GJ0757532403\"","geocoord":{"latitude":"39.1160840759524","longitude":"-84.5990467056226"}}
+,
+{"id":"570F788D-9776-4BC6-A14D-759D1106DA0F","species":null,"description":"\"Request entered through the Web. Refer to Intake Questions for further description.\"","timestamp":"2018-11-04 10:42:00 +0000","address":"\"1517 MANSS AV, CINC - GJ0940433015\"","geocoord":{"latitude":"39.1211564118494","longitude":"-84.5777229694624"}}
+,
+{"id":"D8876748-07A9-4C1B-909B-A149B71A8739","species":null,"description":"\"DEAD ANIMAL ON THE CURB\"","timestamp":"2018-11-05 11:21:00 +0000","address":"\"2918 CENTRAL PKWY - GJ1332134754 \"","geocoord":{"latitude":"39.135857081642","longitude":"-84.5319012953753"}}
+,
+{"id":"10B2003B-09DB-4A54-9321-76D451A84369","species":"deer","description":"\"DEAD DEER\"","timestamp":"2018-11-06 08:03:00 +0000","address":"\"6090 CENTER HILL AV - GJ1561341207 \"","geocoord":{"latitude":"39.1933896016072","longitude":"-84.5033511159379"}}
+,
+{"id":"AEAB3A1F-6110-49BA-B58C-823400F7162B","species":null,"description":"\"DEAD RACCOON DIRECTLY BEHIND 528 READING RD IN DODT ALLEY\"","timestamp":"2018-11-05 11:21:00 +0000","address":"\"E 12TH ST & DODT AL - GJ1567531958 \"","geocoord":{"latitude":"39.1101016230825","longitude":"-84.5055826824091"}}
+,
+{"id":"A6F6CA12-87F2-43D4-8544-F0C38EB1D893","species":null,"description":"\"Request entered through the Web. Refer to Intake Questions for further description.\"","timestamp":"2018-11-04 11:10:00 +0000","address":"\"1165 OVERLOOK AV, CINC - GJ0757532403\"","geocoord":{"latitude":"39.1160840759524","longitude":"-84.5990467056226"}}
+,
+{"id":"6C155392-AEA5-438C-8F25-EB013FF26BA1","species":null,"description":"\"Request entered through the Web. Refer to Intake Questions for further description.\"","timestamp":"2018-11-05 15:55:00 +0000","address":"\"5564 COLERAIN AV, CINC - GJ0965441029\"","geocoord":{"latitude":"39.1932487770425","longitude":"-84.5723482022572"}}
+,
+{"id":"6EEFF993-DC6E-43A5-93FB-5CB31DBE6D49","species":null,"description":"\"Request entered through the Web. Refer to Intake Questions for further description.\"","timestamp":"2018-11-05 14:06:00 +0000","address":"\"2815 QUEEN CITY AV, CINC - GJ0772834422\"","geocoord":{"latitude":"39.1342288241497","longitude":"-84.5966579596749"}}
+,
+{"id":"C9D9A739-7D88-4CDA-B81B-5CFCA071DEEE","species":"deer","description":"\"DEAD DEER ON SIDEWALK\"","timestamp":"2018-11-05 11:23:00 +0000","address":"\"5564 COLERAIN AV - GJ0965441030 \"","geocoord":{"latitude":"39.1932487770425","longitude":"-84.5723482022572"}}
+,
+{"id":"FC90921A-1B1B-434C-AE06-85B06F0EFBE7","species":null,"description":"\"Request entered through the Web. Refer to Intake Questions for further description.\"","timestamp":"2018-11-07 07:57:00 +0000","address":"\"2310 EAST HILL AV, CINC - GJ1977534872\"","geocoord":{"latitude":"39.1352552700486","longitude":"-84.4572207200044"}}
+,
+{"id":"F1D88D51-3126-4C3C-A79C-BFF64B354586","species":"deer","description":"\"DEAD DEER ON SIDEWALK\"","timestamp":"2018-11-06 08:19:00 +0000","address":"\"5654 COLERAIN AV - GJ0935541347 \"","geocoord":{"latitude":"39.1961766615641","longitude":"-84.5757134476833"}}
+,
+{"id":"E3AFBC25-1FBF-44A7-BA8A-DB4F6B45798A","species":null,"description":"\"Request entered through the Web. Refer to Intake Questions for further description.\"","timestamp":"2018-11-07 09:25:00 +0000","address":"\"2316 EAST HILL AV, CINC - GJ1980734870\"","geocoord":{"latitude":"39.1352941009197","longitude":"-84.45687269628"}}
+,
+{"id":"434E45F2-ECE4-49FC-B2EE-4E83FF34F518","species":"dog","description":"\"DEAD ANIMAL ON TOP SEWER DRAIN (DOG) NORTH EAST CORNER\"","timestamp":"2018-11-07 10:11:00 +0000","address":"\"HARTWELL AV & ANTHONY WAYNE AV - GJ1898343389 \"","geocoord":{"latitude":"39.2121853783186","longitude":"-84.4636606992534"}}
+,
+{"id":"8475B7FF-169B-4D8A-ACD4-1F80A47B8E95","species":"dog","description":"\"DEAD DOG ON & BLOCKING MAIN STREET STEPS, LOCATED AT BEND IN GOETHE NEXT TO LISTED ADDRESS\"","timestamp":"2018-11-06 11:08:00 +0000","address":"\"213 GOETHE ST - GJ1511532591 \"","geocoord":{"latitude":"39.1159415954097","longitude":"-84.5118481275614"}}
+,
+{"id":"1DCB78C9-70C1-4519-ABBA-7123E6E381E7","species":null,"description":"\"Request entered through the Web. Refer to Intake Questions for further description.\"","timestamp":"2018-11-06 22:30:00 +0000","address":"\"2310 EAST HILL AV, CINC - GJ1977534872\"","geocoord":{"latitude":"39.135317929209","longitude":"-84.457250674653"}}
+,
+{"id":"5DE142C8-11D0-4A9C-9368-D5F2017D7AFD","species":"cat","description":"\"DEAD CAT AT THE CURB\"","timestamp":"2018-11-05 09:38:00 +0000","address":"\"BEECHMONT AV & LINWOOD AV - GJ2316733609 \"","geocoord":{"latitude":"39.1230807311617","longitude":"-84.4184660761686"}}
+,
+{"id":"D2849DC7-A90E-4212-A290-09981D1DE7C5","species":"cat","description":"\"DEAD CAT\"","timestamp":"2018-11-08 10:43:00 +0000","address":"\"7941 DALY RD - GJ1311343452 \"","geocoord":{"latitude":"39.2142132412642","longitude":"-84.5315663430859"}}
+,
+{"id":"CCFB57C9-1303-4EFC-B5F7-63CB12BFDA17","species":null,"description":"\"Request entered through the Web. Refer to Intake Questions for further description.\"","timestamp":"2018-11-08 10:31:00 +0000","address":"\"4054 PAXTON AV, CINC - GJ2268336704\"","geocoord":{"latitude":"39.1510691539862","longitude":"-84.4230391307111"}}
+,
+{"id":"F735B5B0-A092-45A0-8C21-61EFA58C1220","species":"cat","description":"\"CAT STRUCK BY VEHICLE, LEFT IN ROAD DIRECTLY IN FRONT OF DRIVEWAY AT 5204 WHETSEL\"","timestamp":"2018-11-08 08:35:00 +0000","address":"\"5204 WHETSEL AV - GJ2527638070 \"","geocoord":{"latitude":"39.1626974487112","longitude":"-84.3926209309075"}}
+,
+{"id":"62AEF8D2-CB64-4F90-9B05-9B0DC40150AB","species":"dog","description":"\"DEAD DOG AT 2123 POGUE AV - WILL BE SET AT CURB AT 3:30 \"","timestamp":"2018-11-09 09:58:00 +0000","address":"\"2123 POGUE AV - GJ1953434837 \"","geocoord":{"latitude":"39.1350589819077","longitude":"-84.460060979291"}}
+,
+{"id":"5FAAA454-296B-42E5-8F08-167A31C1DCC1","species":null,"description":"\"Request entered through the Web. Refer to Intake Questions for further description.\"","timestamp":"2018-11-09 10:17:00 +0000","address":"\"3895 W 8TH ST, CINC - GJ0935231295\"","geocoord":{"latitude":"39.1067133124343","longitude":"-84.5792456638006"}}
+,
+{"id":"E408B83B-8FFD-4A07-B23F-1F2EE2B29D65","species":"deer","description":"\"DEAD DEER\"","timestamp":"2018-11-09 07:39:00 +0000","address":"\"2298 HARRISON AV - GJ0950134751 \"","geocoord":{"latitude":"39.1367553720086","longitude":"-84.5760645109537"}}
+,
+{"id":"621A5A22-2D67-4EBB-A999-B4CBC98B48C5","species":"dog","description":"\"DEAD DOG IN FRONT OF SPEEDWAY\"","timestamp":"2018-11-08 12:45:00 +0000","address":"\"RIVER RD & FAIRBANKS AV - GJ1025529384 \"","geocoord":{"latitude":"39.0882568252629","longitude":"-84.5690090911596"}}
+,
+{"id":"F7D4A85B-588A-4A7B-BBE9-959A1E74E7F7","species":"racoon","description":"\"DEAD RACOON IN THE STREET\"","timestamp":"2018-11-09 07:49:00 +0000","address":"\"1728 BRACHMAN AV - GJ2675129530 \"","geocoord":{"latitude":"39.085442933159","longitude":"-84.3784142177401"}}
+,
+{"id":"6EC1C27A-0528-4E9C-8A75-24DF8B6AA179","species":"dog","description":"\"DEAD DOG AT THE CURB IN A BAG\"","timestamp":"2018-11-08 10:36:00 +0000","address":"\"JOSEPH ST & MATLOCK AV - GJ1836039006 \"","geocoord":{"latitude":"39.172885147277","longitude":"-84.4722898127945"}}
+,
+{"id":"3BC33446-25C8-4BBB-884C-9A685B41A5DB","species":"deer","description":"\"DEAD DEER ON SIDEWALK  NEAR ACADEMY\"","timestamp":"2018-11-09 07:43:00 +0000","address":"\"3819 W 8TH ST - GJ0957931333 \"","geocoord":{"latitude":"39.1059684845847","longitude":"-84.576213344492"}}
+,
+{"id":"BECEDB18-1E9F-436C-BEAC-101D180D3B05","species":"squirrel","description":"\"DEAD SQUIRREL IN STREET - WEST SIDE OF STREET NEAR CURB\"","timestamp":"2018-11-08 14:19:00 +0000","address":"\"2309 CHICKASAW ST - GJ1416333598 \"","geocoord":{"latitude":"39.1252441230485","longitude":"-84.522540221002"}}
+,
+{"id":"DA1726E3-6852-41C2-B7D2-326C12123F9C","species":"possum","description":"\"DEAD POSSUM APPROXIMATELY 3-4 FEET FROM CURB\"","timestamp":"2018-11-07 14:45:00 +0000","address":"\"9 WOODSDALE AV - GJ1815143589 \"","geocoord":{"latitude":"39.2141927400513","longitude":"-84.4732238660126"}}
+,
+{"id":"78225C92-4770-4E6E-B069-A097044D7276","species":"cat","description":"\"DEAD CAT IN GRASS BY PARKING LOT ON GRAND BEECH LANE\"","timestamp":"2018-11-08 12:43:00 +0000","address":"\"GRANDIN RD & GRAND BEECH LN - GJ2298633304 \"","geocoord":{"latitude":"39.1203859485373","longitude":"-84.4206630078889"}}
+,
+{"id":"E2A3EA10-1F61-49CB-BDF3-37B96C418181","species":null,"description":"\"DEAD RACCOON\"","timestamp":"2018-11-08 09:06:00 +0000","address":"\"1141 HOLLYWOOD AV - GJ1299942711 \"","geocoord":{"latitude":"39.2075699779286","longitude":"-84.5331286083988"}}
+,
+{"id":"76E3BE41-7909-476F-B7A2-84D5F0624741","species":"deer","description":"\"DEAD DEER AT THE CURB NB ON WINTON\"","timestamp":"2018-11-08 08:18:00 +0000","address":"\"5250 WINTON RD - GJ1400040457 \"","geocoord":{"latitude":"39.1870362735622","longitude":"-84.522251013965"}}
 ]}
