@@ -16,8 +16,11 @@ module RoadkillImport
 	end
 	
 	def self.parse_date(raw)
-		#TODO: actually parse date
-		raw
+		#2016-12-05T00:00:00Z
+		pattern = /^(\d{4,4})[-](\d\d)[-](\d\d)T(\d\d)[:](\d\d)[:](\d\d)Z$/
+		bits = pattern.match(raw)[1..6]
+		bits << 0
+		Time.new(*bits)
 	end
 
 	class RoadKillRecord 
@@ -49,8 +52,7 @@ module RoadkillImport
 				:id => @id,
 				:nonce => @nonce,
 				:description => @description,
-				#TODO
-				:timestamp => @timestamp,
+				:timestamp => @timestamp.to_s,
 				:address => @address,
 				:geocoord => {
 					:latitude => @geocoord.latitude,
@@ -118,8 +120,23 @@ module RoadkillImport
 	end
 	
 	class ExportValidator
+		DataFile = './last.timestamp'
+		RoadKillTooOld = 60 * 60 * 24 * 7
+
+		def sync()
+			@last_update = 0
+			return unless File.exist?(DataFile)
+			@last_update = File.read(DataFile).to_i
+		end
+
+		def set_threshold(stamp)
+			File.write(DataFile, stamp.to_s, :mode => 'w+')
+		end
+		
 		def valid?(record)
-			#TODO
+			return false if record.nonce < @last_update
+			delta = Time.now - record.timestamp
+			return false if delta > RoadKillTooOld
 			true
 		end
 	end
@@ -129,12 +146,15 @@ module RoadkillImport
 			@file = file
 			@validator = validator
 		end
-		
+
 		def export(records)
+			track_update = 0
+			@validator.sync
 			add_comma = false
 			File.open(@file, 'w+') do |f|
 				f.puts '{"data":['
 				records.each do |r| 
+					track_update = r.nonce if r.nonce > track_update
 					next unless @validator.valid?(r)
 					f.puts ',' if add_comma 
 					add_comma = true unless add_comma
@@ -142,16 +162,11 @@ module RoadkillImport
 				end
 				f.puts ']}'
 			end
+			@validator.set_threshold(track_update)
 		end
 	end
 
 end
-
-#TODO: bind in actual fetcher 
-#json_file = File.read("./data-dump.json")
-#json_file = '{"data": []}'
-#raw_json = JSON.parse(json_file)
-#puts "!!! check valid json #{RoadkillImport::RoadKillRecord.valid_json?(raw_json)}"
 
 $remote_api = "https://data.cincinnati-oh.gov/api/views/wdw5-d4i2/rows.json?accessType=DOWNLOAD"
 
