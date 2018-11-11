@@ -37,11 +37,14 @@
       <div class="form-group">
         <label for="RoadkillFilterDistance">Distance From Me</label>
         <div class="row">
-          <div class="col-sm-1 text-right">
+          <input type="range" class="col-12 form-control-range custom-range" min="0" max="50" step="5" id="RoadkillFilterDistance">
+          <div class="col-4">
             <small>0 mi</small>
           </div>
-          <input type="range" class="col-sm-10 form-control-range custom-range" min="0" max="50" step="5" id="RoadkillFilterDistance">
-          <div class="col-sm-1">
+          <div class="col-4">
+            slider value
+          </div>
+          <div class="col-4 text-right">
             <small>50 mi</small>
           </div>
         </div>
@@ -49,11 +52,14 @@
       <div class="form-group">
         <label for="RoadkillFilterFreshness">Freshness</label>
         <div class="row">
-          <div class="col-sm-1 text-right">
+          <input type="range" class="col-12 form-control-range custom-range" min="0" max="7" step="1" id="RoadkillFilterFreshness">
+          <div class="col-4">
             <small>1 day</small>
           </div>
-          <input type="range" class="col-sm-10 form-control-range custom-range" min="0" max="7" step="1" id="RoadkillFilterFreshness">
-          <div class="col-sm-1">
+          <div class="col-4">
+            slider value
+          </div>
+          <div class="col-4 text-right">
             <small>7 days</small>
           </div>
         </div>

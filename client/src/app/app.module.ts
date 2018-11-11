@@ -19,9 +19,12 @@ import {LoginComponent} from './login/login.component';
 import {RaidDescriptionComponent} from './raid-description/raid-description.component';
 import {RaidListComponent} from './raid-list/raid-list.component';
 import {RoadKillLocatorComponent} from './road-kill-locator/road-kill-locator.component';
-import {TitleScreenComponent} from './title-screen/title-screen.component';
-import {MapsService} from './services/maps.service';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { MeatupPageComponent } from './meatup-page/meatup-page.component';
+import { DishJudgementComponent } from './dish-judgement/dish-judgement.component';
+import { DishDescriptionComponent } from './dish-description/dish-description.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { HighScorePageComponent } from './high-score-page/high-score-page.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,15 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     RaidListComponent,
     RaidDescriptionComponent,
     RoadKillLocatorComponent,
+    IngredientsListComponent,
+    IngredientDescriptionComponent,
+    DishComponent,
+    MeatupPageComponent,
+    DishJudgementComponent,
+    DishDescriptionComponent,
+    NavbarComponent,
+    ProfilePageComponent,
+    HighScorePageComponent,
     TitleScreenComponent
   ],
   imports: [
@@ -43,7 +55,6 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    FormsModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAiSO6OQGfj874yQA08Cc8fC5vls3IZDXg'
