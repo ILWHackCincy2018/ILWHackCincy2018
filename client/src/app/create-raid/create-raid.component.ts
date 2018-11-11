@@ -4,8 +4,6 @@ import {AngularFirestore} from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
 import {MeatUp} from '../models/meatup.model';
 import {MapsService} from '../services/maps.service';
-import {MeatUp} from '../models/meatup.model';
-import {Role} from '../models/role.model';
 
 @Component({
   selector: 'app-create-raid',
