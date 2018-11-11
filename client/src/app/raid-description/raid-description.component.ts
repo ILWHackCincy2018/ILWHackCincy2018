@@ -9,7 +9,6 @@ import {MeatUp} from '../models/meatup.model';
 })
 export class RaidDescriptionComponent implements OnInit {
 
-  @Input() meatupId: string;
 @Input() meatup: MeatUp;
 
   constructor(private db: AngularFirestore) {
@@ -19,7 +18,9 @@ export class RaidDescriptionComponent implements OnInit {
   }
 
   joinMeatup() {
-    // this.db.collection('meatups').doc()
+    this.db.collection('meatups').doc(this.meatup.id).update({
+      'attendees': []
+    });
   }
 
 }

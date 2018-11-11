@@ -22,10 +22,7 @@ export class CreateRaidComponent implements OnInit {
   public create() {
     this.db.collection('meatups').add({
       'acquisitionStart': this.meatup.acquisitionStart,
-      'attendees': [{
-        'name': this.user.displayName ? this.user.displayName : '',
-        'userId': this.user.uid
-      }],
+      'attendeesCount': 1,
       'ingredients': [this.meatup.ingredients],
       'isActive': true,
       'location': new firebase.firestore.GeoPoint(this.meatUpLocation.latitude, this.meatUpLocation.longitude),
@@ -37,6 +34,10 @@ export class CreateRaidComponent implements OnInit {
     }).then(doc => {
       this.db.collection('meatups').doc(doc.id).update({
         'id': doc.id
+      });
+      this.db.collection('meatups').doc(doc.id).collection('attendees').add({
+        'name': this.user.displayName ? this.user.displayName : '',
+        'userId': this.user.uid
       });
 
       this.db.collection('users').doc(this.user.uid).collection('meetups').add({
