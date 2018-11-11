@@ -1,6 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-title-screen></app-title-screen>
-<app-dish></app-dish>
+<div *ngIf="afAuth.user | async as user; else showLogin">
+    <h1>Hello {{ user.displayName }}!</h1>
+    <button (click)="logout()">Logout</button>
+    <app-title-screen></app-title-screen>
+    <app-dish></app-dish>
+</div>
+<ng-template #showLogin>
+    <p>Please login.</p>
+    <app-login></app-login>
+</ng-template>
 
 <ul>
     <li class="text" style="display:unset" *ngFor="let item of items | async">
