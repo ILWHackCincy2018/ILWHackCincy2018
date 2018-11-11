@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFirestore} from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
-import {MeatUp} from './meat-up.model';
+import {MeatUp} from '../models/meatup.model';
+import {Role} from '../models/role.model';
 
 @Component({
   selector: 'app-create-raid',
@@ -22,7 +23,12 @@ export class CreateRaidComponent implements OnInit {
   public create() {
     this.db.collection('meatups').add({
       'acquisitionStart':this.meatup.acquisitionStart,
-      'ingredients': this.meatup.ingredients,
+      'attendees': [{
+        'name': this.user.displayName ? this.user.displayName : '',
+        'role': Role.Judge,
+        'userId': this.user.uid
+      }],
+      'ingredients': [this.meatup.ingredients],
       'isActive': true,
       'location': new firebase.firestore.GeoPoint(0, 0),
       'maxChefs': this.meatup.maxChefs,
