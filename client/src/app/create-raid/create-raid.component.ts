@@ -15,7 +15,8 @@ export class CreateRaidComponent implements OnInit {
   public meatup: MeatUp = new MeatUp();
   user: firebase.User;
 
-  constructor(public afAuth: AngularFireAuth, private db: AngularFirestore, private mapsService: MapsService) {
+  constructor(public afAuth: AngularFireAuth, private db: AngularFirestore,
+              private mapsService: MapsService) {
     this.user = firebase.auth().currentUser;
   }
 

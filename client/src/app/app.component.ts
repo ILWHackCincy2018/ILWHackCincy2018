@@ -11,21 +11,19 @@ import {Observable} from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-app';
-
-  user: firebase.User;
   items: Observable<any[]>;
-  myRaids: Observable<any[]>;
+  myRaids: Observable<any[]> = new Observable<any[]>();
+  title = 'my-app';
+  user: firebase.User;
+
   constructor(public afAuth: AngularFireAuth,
-    private db: AngularFirestore,
-    public state: StateService) {
-    this.user = firebase.auth().currentUser;
-
+              private db: AngularFirestore,
+              public state: StateService) {
     this.items = db.collection('RoadKill').valueChanges();
-  }
-
-  gotClicked(){
-    this.myRaids = this.db.collection('users').doc(this.user.uid).collection('meetups').valueChanges();
+    setTimeout(()=> {
+      this.user = firebase.auth().currentUser;
+      this.myRaids = this.db.collection('users').doc(this.user.uid).collection('meetups').valueChanges();
+    }, 1000);
   }
 
   login() {

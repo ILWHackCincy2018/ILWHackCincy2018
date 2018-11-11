@@ -18,7 +18,7 @@
                         My MEATups
                     </a>
                     <div class="dropdown-menu" aria-labelledby="MyMEATups">
-                        <a *ngFor="let item of myRaids" uiSref="meat-up" [uiParams]="{meat: item}" class="dropdown-item" uiSrefActive="active">{{item.meatupName}}
+                        <a *ngFor="let item of myRaids | async" uiSref="meat-up" [uiParams]="{meat: item}" class="dropdown-item" uiSrefActive="active">{{item.name}}
                             <span *ngIf="item.isOwner" class="badge badge-success">Judge</span>
                             <span *ngIf="!item.isOwner" class="badge badge-info">Chef</span>
                         </a>
