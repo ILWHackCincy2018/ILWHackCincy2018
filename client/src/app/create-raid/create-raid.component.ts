@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFirestore} from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
-import {MeatUp} from './meat-up.model';
+import {MeatUp} from '../models/meatup.model';
+import {Role} from '../models/role.model';
 import {MapsService} from '../services/maps.service';
 
 @Component({
