@@ -20,6 +20,8 @@ import {RaidDescriptionComponent} from './raid-description/raid-description.comp
 import {RaidListComponent} from './raid-list/raid-list.component';
 import {RoadKillLocatorComponent} from './road-kill-locator/road-kill-locator.component';
 import {TitleScreenComponent} from './title-screen/title-screen.component';
+import {MapsService} from './services/maps.service';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -41,14 +43,20 @@ import {TitleScreenComponent} from './title-screen/title-screen.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    FormsModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAiSO6OQGfj874yQA08Cc8fC5vls3IZDXg'
     }),
     FirebaseUIModule.forRoot(FirebaseUiAuthConfig),
     FormsModule
   ],
-  providers: [],
+  providers: [
+    MapsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 }
+
+export const API_KEY = "AIzaSyAiSO6OQGfj874yQA08Cc8fC5vls3IZDXg";

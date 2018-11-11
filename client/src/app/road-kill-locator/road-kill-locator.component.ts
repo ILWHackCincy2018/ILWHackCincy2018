@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {RoadKill} from '../models/roadKill';
+import {MapsService} from '../services/maps.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-road-kill-locator',
@@ -7,24 +9,35 @@ import {RoadKill} from '../models/roadKill';
   styleUrls: ['./road-kill-locator.component.css']
 })
 export class RoadKillLocatorComponent implements OnInit {
+  @Input() roadKillFromDb: Observable<any[]>;
   mapCenter: {latitude: number, longitude: number} = {latitude: 0, longitude: 0};
   roadKills: RoadKill[];
 
-  constructor() {}
+  constructor(private mapsService: MapsService) {}
 
   ngOnInit() {
-
-    this.roadKills = [];
-    this.roadKills.push({type: 'Cat', latitude: 39.1067133124343, longitude: -84.5792456638006});
-    this.roadKills.push({type: 'Dog', latitude: 39.1906367102039, longitude: -84.5702101094013});
-    this.roadKills.push({type: 'Venison', latitude: 39.1067133124343, longitude: -84.5891420249518});
-    this.roadKills.push({type: 'Venison', latitude: 39.0790980936287, longitude: -84.5954134741913});
-    this.roadKills.push({type: 'Possum', latitude: 39.1432013345715, longitude: -84.5125047587451});
-
-    if (this.roadKills !== []){
-      this.mapCenter.latitude = this.roadKills[0].latitude;
-      this.mapCenter.longitude = this.roadKills[0].longitude
+    if(this.roadKillFromDb) {
+      this.roadKillFromDb.subscribe(response => {
+        this.setLocation("Union Hall 1311 Vine St Cincinnati, OH 45202");
+        this.roadKills = response;
+      });
     }
+  }
+
+  public getDistanceFromUser(roadKill: RoadKill){
+    return this.mapsService.getDistance(this.mapCenter.latitude, this.mapCenter.longitude, roadKill.geocoord._lat, roadKill.geocoord._long);
+  }
+
+  public getDaysOld(dateFound: string){
+    return this.mapsService.getDaysOld(dateFound);
+  }
+
+  public setLocation(address: string){
+    this.mapsService.setLocation(address).subscribe((response: any) => {
+      this.mapCenter.latitude = response.results[0].geometry.location.lat;
+      this.mapCenter.longitude = response.results[0].geometry.location.lng;
+      this.roadKills[0] = ({species: 'Human', geocoord: {_lat: this.mapCenter.latitude, _long: this.mapCenter.longitude}});
+    });
   }
 
 }
