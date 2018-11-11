@@ -24,20 +24,18 @@ import {TitleScreenComponent} from './title-screen/title-screen.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TitleScreenComponent,
     CreateRaidComponent,
+    DishComponent,
+    IngredientDescriptionComponent,
+    IngredientsListComponent,
+    LoginComponent,
     RaidListComponent,
     RaidDescriptionComponent,
     RoadKillLocatorComponent,
-    IngredientsListComponent,
-    IngredientDescriptionComponent,
-    DishComponent,
-    IngredientsListComponent,
-    LoginComponent
+    TitleScreenComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(FirebaseConfig.firebase),
     AngularFirestoreModule,
@@ -46,7 +44,6 @@ import {TitleScreenComponent} from './title-screen/title-screen.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAiSO6OQGfj874yQA08Cc8fC5vls3IZDXg'
     }),
-    AngularFireDatabaseModule,
     FirebaseUIModule.forRoot(FirebaseUiAuthConfig),
     FormsModule
   ],
