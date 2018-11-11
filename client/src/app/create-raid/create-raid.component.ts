@@ -4,8 +4,6 @@ import {AngularFirestore} from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
 import {MeatUp} from '../models/meatup.model';
 import {MapsService} from '../services/maps.service';
-import {MeatUp} from '../models/meatup.model';
-import {Role} from '../models/role.model';
 
 @Component({
   selector: 'app-create-raid',
@@ -38,13 +36,15 @@ export class CreateRaidComponent implements OnInit {
         'id': doc.id
       });
       this.db.collection('meatups').doc(doc.id).collection('attendees').add({
+        'meatupId': doc.id,
+        'meatupName': this.meatup.name,
         'name': this.user.displayName ? this.user.displayName : '',
-        'userId': this.user.uid
+        'userId': this.user.uid,
       });
 
       this.db.collection('users').doc(this.user.uid).collection('meetups').add({
         'name': this.meatup.name,
-        'meetupId': doc.id,
+        'meatupId': doc.id,
         'isOwner': true
       });
     });

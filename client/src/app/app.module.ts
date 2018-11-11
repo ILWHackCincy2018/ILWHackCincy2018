@@ -7,6 +7,7 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {FormsModule} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
+import {UIRouterModule} from '@uirouter/angular';
 import {FirebaseUIModule} from 'firebaseui-angular';
 import {FirebaseConfig} from '../environments/firebase.config';
 import {FirebaseUiAuthConfig} from '../environments/FirebaseUiAuth.config';
@@ -26,16 +27,7 @@ import {RaidDescriptionComponent} from './raid-description/raid-description.comp
 import {RaidListComponent} from './raid-list/raid-list.component';
 import {RoadKillLocatorComponent} from './road-kill-locator/road-kill-locator.component';
 import {MapsService} from './services/maps.service';
-import { MeatupPageComponent } from './meatup-page/meatup-page.component';
-import { DishJudgementComponent } from './dish-judgement/dish-judgement.component';
-import { DishDescriptionComponent } from './dish-description/dish-description.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { ProfilePageComponent } from './profile-page/profile-page.component';
-import { HighScorePageComponent } from './high-score-page/high-score-page.component';
 import {TitleScreenComponent} from './title-screen/title-screen.component';
-import {HttpClientModule} from '@angular/common/http';
-import {MapsService} from './services/maps.service';
-import {UIRouterModule} from '@uirouter/angular'
 
 const INIT_STATES = [
   {
