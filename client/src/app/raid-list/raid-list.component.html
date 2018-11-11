@@ -2,15 +2,8 @@
   <ul>
     <li class="text" style="display:unset" *ngFor="let item of raids | async">
       <p>
-        {{item.name}}
+          <app-raid-description [meatup]="item"></app-raid-description>
       </p>
     </li>
   </ul>
-
-  <app-raid-description>
-  </app-raid-description>
-  <app-raid-description>
-  </app-raid-description>
-  <app-raid-description>
-  </app-raid-description>
 </div> <!-- END #accordionExample -->

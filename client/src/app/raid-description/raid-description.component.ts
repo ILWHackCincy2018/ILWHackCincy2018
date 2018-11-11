@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {MeatUp} from '../models/meatup.model';
 
 @Component({
   selector: 'app-raid-description',
@@ -7,6 +8,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class RaidDescriptionComponent implements OnInit {
 
+@Input() meatup: MeatUp;
 
   constructor() {
   }
